@@ -32,7 +32,7 @@ export default {
       cerapro: "Cera Pro",
     },
     boxShadow: {
-      img: "0 0 12px 8px rgba(156, 204, 252, 0.2)",
+      footerform: "0px 0px 20px 0px #0000000F",
       btn: "rgb(0 58 117 / 10%) 0px 2px 1px inset, rgb(11 13 14 / 50%) 0px -3px 0px inset, rgb(11 13 14) 0px 1px 2px 0px;",
     },
     backgroundSize: {

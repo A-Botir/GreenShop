@@ -1,17 +1,82 @@
 import { NavLink, useLocation } from "react-router-dom";
 
 import Logo from "../assets/images/icons/Logo.svg";
-import Cards from "../assets/images/photos/cards.svg";
+import Cards from "../assets/images/photos/footer/cards.svg";
+import PotTop from "../assets/images/photos/footer/PotTop.svg";
+import PotBott from "../assets/images/photos/footer/PotBott.svg";
+import Bailer from "../assets/images/photos/footer/Bailer.svg";
+import Cactus from "../assets/images/photos/footer/Cactus.svg";
 
 const Footer = () => {
   const location = useLocation();
   return (
-    <footer>
-      <div className="flex items-start justify-between bg-[#FBFBFB] p-6">
-        <div className="flex">
-          <div></div>
-          <div></div>
-          <div></div>
+    <footer className="py-[6px]">
+      <div className="grid grid-cols-9 gap-10 bg-[#FBFBFB] px-6 pb-6 pt-7">
+        <div className="col-span-6 grid grid-cols-10 gap-5">
+          <div className="col-span-3">
+            <div className="bg-[url('./assets/images/photos/footer/Ellipse.svg')] bg-left-bottom bg-no-repeat pl-4">
+              <img src={PotTop} alt="footer img" />
+              <img src={PotBott} alt="footer img" />
+            </div>
+            <h4 className="mb-2 mt-4 text-[17px] font-bold">Garden Care</h4>
+            <p className="text-oridinary ">
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants.
+            </p>
+          </div>
+          <div className="col-span-4 border-x border-[#46A3581A] px-[26px]">
+            <img
+              src={Cactus}
+              alt="footer img"
+              className="bg-[url('./assets/images/photos/footer/Ellipse.svg')] bg-left-bottom bg-no-repeat pl-4"
+            />
+            <h4 className="mb-2 mt-4 text-[17px] font-bold">
+              Plant Renovation
+            </h4>
+            <p className="text-oridinary ">
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants.
+            </p>
+          </div>
+          <div className="col-span-3">
+            <img
+              src={Bailer}
+              alt="footer img"
+              className="bg-[url('./assets/images/photos/footer/Ellipse.svg')] bg-left bg-no-repeat pl-2"
+            />
+            <h4 className="mb-2 mt-4 text-[17px] font-bold">Watering Graden</h4>
+            <p className="text-oridinary ">
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants.
+            </p>
+          </div>
+        </div>
+        <div className="col-span-3">
+          <h4 className="mb-4 text-[17px] font-bold">
+            Would you like to join newsletters?
+          </h4>
+          <form
+            id="footer-form"
+            className="shadow-footerform mb-4 flex w-full items-center"
+          >
+            <input
+              type="email"
+              className=" flex-grow  rounded-l-md p-3 outline-none"
+              placeholder="enter your email address..."
+              minLength={5}
+            />
+            <button
+              type="submit"
+              className="rounded-r-md bg-check px-6 py-3 text-[18px] font-bold text-[white] transition duration-300"
+            >
+              Join
+            </button>
+          </form>
+          <p className="text-[13px] text-oridinary">
+            We usually post offers and challenges in newsletter. We’re your
+            online houseplant destination. We offer a wide range of houseplants
+            and accessories shipped directly from our (green)house to yours!
+          </p>
         </div>
       </div>
       <div className="flex items-center gap-10 border-y border-[#46A35880] bg-[#46A3581A] px-6 py-8">
