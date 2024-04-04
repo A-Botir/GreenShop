@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import Button from "@mui/material/Button";
+import { IconButton, Button } from "@mui/material";
 
 import Logo from "../assets/images/icons/Logo.svg";
 
@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className=" z-[90] w-full sm:fixed sm:bottom-0 sm:border-none">
+    <header className=" fixed top-0 z-[90] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
       <div className="container border-b-[0.3px] border-[#46A35880] pt-3 sm:hidden">
         <div className="flex items-center justify-between">
           <NavLink to="/">
@@ -52,11 +52,13 @@ const Header = () => {
                     : "border-[#fff]"
                 }`}
               >
-                <p
-                  className={`${location.pathname === "/plantcare" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
-                >
-                  Plant Care
-                </p>
+                <NavLink to="/shopcart">
+                  <p
+                    className={`${location.pathname === "/plantcare" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
+                  >
+                    Plant Care
+                  </p>
+                </NavLink>
               </li>
               <li
                 className={`border-b-[3px] hover:font-bold lg:text-[16px] ${
@@ -74,7 +76,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex gap-6">
-            <button>
+            <IconButton aria-label="search">
               <svg
                 width="20"
                 height="20"
@@ -87,24 +89,26 @@ const Header = () => {
                   fill="#3D3D3D"
                 />
               </svg>
-            </button>
-            <button className="relative">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.1567 20.25H9.89163C6.79003 20.25 4.26667 17.7267 4.26667 14.6251V8.85947C4.26667 5.9762 2.82958 3.30739 0.422521 1.72031C-0.00975775 1.43531 -0.129101 0.853876 0.155897 0.421598C0.440896 -0.0107278 1.02228 -0.130118 1.45465 0.154974C2.82874 1.06097 3.94351 2.2559 4.74067 3.63167C4.91293 3.82466 6.30202 5.29699 8.57919 5.29699H19.3748C22.3201 5.24191 24.6254 8.19769 23.8554 11.0406L22.6126 15.9939C21.9839 18.4998 19.7404 20.25 17.1567 20.25ZM5.90513 6.64234C6.06099 7.36238 6.14166 8.10483 6.14166 8.85947V14.6251C6.14166 16.6928 7.8239 18.375 9.89163 18.375H17.1567C18.8792 18.375 20.3748 17.2082 20.794 15.5376L22.0367 10.5844C22.4943 8.89509 21.1243 7.13931 19.3748 7.17198H8.57914C7.54926 7.17198 6.65283 6.94993 5.90513 6.64234ZM9.42289 22.8281C9.42289 22.1809 8.89822 21.6563 8.25102 21.6563C6.69609 21.7182 6.69745 23.9387 8.25102 24C8.89822 24 9.42289 23.4753 9.42289 22.8281ZM18.751 22.8281C18.751 22.1809 18.2263 21.6563 17.5791 21.6563C16.0242 21.7182 16.0255 23.9387 17.5791 24C18.2263 24 18.751 23.4753 18.751 22.8281ZM20.3123 9.98446C20.3123 9.46668 19.8925 9.04697 19.3748 9.04697H8.95414C7.71027 9.09647 7.71121 10.8729 8.95414 10.922H19.3748C19.8925 10.922 20.3123 10.5022 20.3123 9.98446Z"
-                  fill="#3D3D3D"
-                />
-              </svg>
-              <span className="absolute right-[-6px] top-[6px] h-4 w-4 rounded-[50%] border-2 border-[white] bg-[#46A358] text-center align-top text-[10px] text-[white]">
-                5
-              </span>
-            </button>
+            </IconButton>
+            <IconButton aria-label="shop">
+              <div className="relative">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.1567 20.25H9.89163C6.79003 20.25 4.26667 17.7267 4.26667 14.6251V8.85947C4.26667 5.9762 2.82958 3.30739 0.422521 1.72031C-0.00975775 1.43531 -0.129101 0.853876 0.155897 0.421598C0.440896 -0.0107278 1.02228 -0.130118 1.45465 0.154974C2.82874 1.06097 3.94351 2.2559 4.74067 3.63167C4.91293 3.82466 6.30202 5.29699 8.57919 5.29699H19.3748C22.3201 5.24191 24.6254 8.19769 23.8554 11.0406L22.6126 15.9939C21.9839 18.4998 19.7404 20.25 17.1567 20.25ZM5.90513 6.64234C6.06099 7.36238 6.14166 8.10483 6.14166 8.85947V14.6251C6.14166 16.6928 7.8239 18.375 9.89163 18.375H17.1567C18.8792 18.375 20.3748 17.2082 20.794 15.5376L22.0367 10.5844C22.4943 8.89509 21.1243 7.13931 19.3748 7.17198H8.57914C7.54926 7.17198 6.65283 6.94993 5.90513 6.64234ZM9.42289 22.8281C9.42289 22.1809 8.89822 21.6563 8.25102 21.6563C6.69609 21.7182 6.69745 23.9387 8.25102 24C8.89822 24 9.42289 23.4753 9.42289 22.8281ZM18.751 22.8281C18.751 22.1809 18.2263 21.6563 17.5791 21.6563C16.0242 21.7182 16.0255 23.9387 17.5791 24C18.2263 24 18.751 23.4753 18.751 22.8281ZM20.3123 9.98446C20.3123 9.46668 19.8925 9.04697 19.3748 9.04697H8.95414C7.71027 9.09647 7.71121 10.8729 8.95414 10.922H19.3748C19.8925 10.922 20.3123 10.5022 20.3123 9.98446Z"
+                    fill="#3D3D3D"
+                  />
+                </svg>
+                <span className="absolute right-[-6px] top-[6px] h-4 w-4 rounded-[50%] border-2 border-[white] bg-[#46A358] text-center align-top text-[10px] text-[white]">
+                  5
+                </span>
+              </div>
+            </IconButton>
             <Button
               variant="contained"
               sx={{
@@ -156,7 +160,7 @@ const Header = () => {
       </div>
       <div className="relative hidden sm:block">
         <div className=" sm:container">
-          <nav className="shadow-head  w-full rounded-t-[30px] bg-[white] px-8 py-10">
+          <nav className="w-full  rounded-t-[30px] bg-[white] px-8 py-6 shadow-head">
             <ul className="flex items-center justify-between">
               <div className="flex items-center justify-center gap-12">
                 <li className="">
@@ -238,8 +242,8 @@ const Header = () => {
                 </li>
               </div>
             </ul>
-            <div className="absolute left-[45%] right-[55%] top-[-40px] z-[99] h-[80px] w-[80px] rounded-[50%] bg-[#FFF] p-4">
-              <button className="shadow-headbtn flex h-16 w-16 items-center justify-center rounded-[50%] bg-gradient-to-b from-[#46A35866] to-[#46A358]">
+            <div className="absolute left-[42%] right-[50%] top-[-40px] z-[99] flex h-[72px] w-[72px] items-center justify-center rounded-[50%] bg-[#FFF]">
+              <button className="flex h-16 w-16 items-center justify-center rounded-[50%] bg-gradient-to-b from-[#46A35866] to-[#46A358] shadow-headbtn">
                 <svg
                   width="27.000000"
                   height="24.000000"

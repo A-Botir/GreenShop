@@ -1,7 +1,11 @@
+import PlantSlider from "../components/PlantSlider";
+import SinglePage from "../components/SingleInfo";
+
 const Shop = () => {
   return (
     <div>
-      <p>6</p>
+      <SinglePage />
+      <PlantSlider />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-[28%] sm:w-full">
+    <div className="sm-hidden w-[28%] sm:w-full">
       <div className="bg-[#FBFBFB] pb-5 pl-[18px] pr-6 pt-[14px]">
         <h4 className="text-[18px] font-bold sm:hidden">Categories</h4>
         <nav className="mt- mb-9 pl-3 sm:hidden">
@@ -52,60 +52,58 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
-        <div className="sm:fixed sm:top-0 sm:z-[100] sm:w-full sm:bg-[#FBFBFB]">
-          <h4 className="text-[18px] font-bold">Price Range</h4>
-          <div className="mb-12 mt-5 pl-3">
-            <Slider
-              getAriaLabel={() => "Price range"}
-              sx={{
-                width: 210,
-                color: "#46A358",
-                "& .MuiSlider-thumb": {
-                  backgroundColor: "#46A358",
-                  borderColor: "#FFF",
-                  borderWidth: "3px",
-                },
-                "& .MuiSlider-rail": {
-                  backgroundColor: "#46A358",
-                },
-                "& .MuiSlider-track": {
-                  backgroundColor: "#46A358",
-                  borderColor: "#46A358",
-                },
-              }}
-              value={value}
-              onChange={handleChange}
-              getAriaValueText={valuetext}
-              min={0}
-              max={1500}
-            />
-            <Typography id="non-linear-slider" gutterBottom>
-              <span className="mb-4 flex items-center gap-2 text-[15px]">
-                Price:{" "}
-                <span className="text-[15px] font-bold text-check">
-                  ${value[0]} - ${value[1]}
-                </span>
-              </span>
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
+        <h4 className="text-[18px] font-bold">Price Range</h4>
+        <div className="mb-12 mt-5 pl-3">
+          <Slider
+            getAriaLabel={() => "Price range"}
+            sx={{
+              width: 210,
+              color: "#46A358",
+              "& .MuiSlider-thumb": {
                 backgroundColor: "#46A358",
-                color: "white",
-                fontWeight: "700",
-                fontFamily: "Cera Pro",
-                paddingX: "16px",
-                textTransform: "none",
-                "&:hover": {
-                  backgroundColor: "#46A358",
-                },
-              }}
-            >
-              <span className="text-[16px] font-bold text-[#fff] md:text-[14px]">
-                Filter
+                borderColor: "#FFF",
+                borderWidth: "3px",
+              },
+              "& .MuiSlider-rail": {
+                backgroundColor: "#46A358",
+              },
+              "& .MuiSlider-track": {
+                backgroundColor: "#46A358",
+                borderColor: "#46A358",
+              },
+            }}
+            value={value}
+            onChange={handleChange}
+            getAriaValueText={valuetext}
+            min={0}
+            max={1500}
+          />
+          <Typography id="non-linear-slider" gutterBottom>
+            <span className="mb-4 flex items-center gap-2 text-[15px]">
+              Price:{" "}
+              <span className="text-[15px] font-bold text-check">
+                ${value[0]} - ${value[1]}
               </span>
-            </Button>
-          </div>
+            </span>
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#46A358",
+              color: "white",
+              fontWeight: "700",
+              fontFamily: "Cera Pro",
+              paddingX: "16px",
+              textTransform: "none",
+              "&:hover": {
+                backgroundColor: "#46A358",
+              },
+            }}
+          >
+            <span className="text-[16px] font-bold text-[#fff] md:text-[14px]">
+              Filter
+            </span>
+          </Button>
         </div>
         <h4 className="text-[18px] font-bold sm:hidden">Size</h4>
         <nav className="mt- mb-9 pl-3 sm:hidden ">

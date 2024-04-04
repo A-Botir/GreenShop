@@ -48,7 +48,7 @@
     font-weight: 400;
     font-size: 14px;
     color: #3d3d3d;
-    line-height: 150%;
+    line-height: 16px;
     margin: 0;
     padding: 0;
   }
@@ -56,6 +56,7 @@
   li,
   button {
     cursor: pointer;
+    outline: none;
   }
 
   ul {
@@ -86,5 +87,9 @@
   }
   .linkeffect:hover .arrowsvg {
     fill: #46a358;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #46a358;
   }
 }

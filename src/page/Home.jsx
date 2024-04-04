@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="pb-[100px] pt-1 sm:pb-[50px]">
       <Hero />
-      <div className="mb-[100px] flex justify-between sm:mb-[50px] sm:block">
+      <div className="mb-[100px] mt-8 flex justify-between sm:mb-[50px] sm:mt-4 sm:block">
         <Sidebar />
         <CardList />
       </div>
