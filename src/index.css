@@ -33,9 +33,20 @@
       url(../src/assets/font/CeraPro/CeraPro-Bold.woff) format("woff");
   }
 
+  @font-face {
+    font-family: "Cera Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src:
+      url(../src/assets/font/CeraPro/CeraPro-Black.ttf) format("truetype"),
+      url(../src/assets/font/CeraPro/CeraPro-Black.woff) format("woff");
+  }
+
   * {
     font-family: "Cera Pro", Helvetica, sans-serif;
     font-weight: 400;
+    font-size: 14px;
     color: #3d3d3d;
     line-height: 150%;
     margin: 0;
@@ -64,33 +75,16 @@
     padding: 0;
   }
 
-  @font-face {
-    font-family: "Cera Pro";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-      url(../src/assets/font/CeraPro/CeraPro-Regular.ttf) format("truetype"),
-      url(../src/assets/font/CeraPro/CeraPro-Regular.woff) format("woff");
+  .cardbtn_group {
+    display: none;
   }
-
-  @font-face {
-    font-family: "Cera Pro";
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src:
-      url(../src/assets/font/CeraPro/CeraPro-Medium.ttf) format("truetype"),
-      url(../src/assets/font/CeraPro/CeraPro-Medium.woff) format("woff");
+  .card_item:hover .cardbtn_group {
+    display: flex;
   }
-
-  @font-face {
-    font-family: "Cera Pro";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src:
-      url(../src/assets/font/CeraPro/CeraPro-Bold.ttf) format("truetype"),
-      url(../src/assets/font/CeraPro/CeraPro-Bold.woff) format("woff");
+  .arrowsvg {
+    fill: none;
+  }
+  .linkeffect:hover .arrowsvg {
+    fill: #46a358;
   }
 }

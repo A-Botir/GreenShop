@@ -18,6 +18,7 @@ export default {
       oridinary: "#727272",
       navlist: "#3D3D3D",
       check: "#46A358",
+      grey: "#FBFBFB",
     },
     screens: {
       sm: { min: "398px", max: "767px" },
@@ -33,16 +34,14 @@ export default {
     },
     boxShadow: {
       footerform: "0px 0px 20px 0px #0000000F",
-      btn: "rgb(0 58 117 / 10%) 0px 2px 1px inset, rgb(11 13 14 / 50%) 0px -3px 0px inset, rgb(11 13 14) 0px 1px 2px 0px;",
+      head: "0px -10px 30px 0px #B8B8B833",
+      headbtn: "0px 10px 20px 0px #D3D3D3",
     },
     backgroundSize: {
       auto: "auto",
       cover: "cover",
       contain: "contain",
       half: "50%",
-    },
-    fontSize: {
-      "xl-custom": "1.125rem",
     },
   },
   plugins: [],

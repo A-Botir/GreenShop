@@ -7,8 +7,8 @@ import { Home, Shop, ShopCart, Checkout } from "./page";
 const App = () => {
   return (
     <div className="w-full bg-[#FFFFFF]">
+      <Header />
       <div className="container">
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -16,6 +16,7 @@ const App = () => {
           <Route path="/shopCart" element={<ShopCart />} />
         </Routes>
         <Footer />
+        <div className="hidden h-[120px] sm:block"></div>
       </div>
     </div>
   );
