@@ -19,7 +19,7 @@ const Header = () => {
     const count = cartItems.length;
     setCartItemCount(count);
   }, []);
-  // ишламди, рендер боса ишлавоти 
+  // ишламди, рендер боса ишлавоти
 
   return (
     <header className=" fixed top-0 z-[80] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
@@ -85,16 +85,19 @@ const Header = () => {
               </li>
               <li
                 className={`border-b-[3px] hover:font-bold lg:text-[16px] ${
-                  location.pathname === "/blogs"
+                  location.pathname === "/cabinat"
                     ? " border-[#46A358] font-bold"
                     : "border-[#fff]"
                 }`}
               >
-                <p
-                  className={`${location.pathname === "/blogs" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
-                >
-                  Blogs
-                </p>
+                {" "}
+                <NavLink to="/cabinat">
+                  <p
+                    className={`${location.pathname === "/cabinat" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
+                  >
+                    Blogs
+                  </p>
+                </NavLink>
               </li>
             </ul>
           </nav>

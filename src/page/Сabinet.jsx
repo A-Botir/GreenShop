@@ -4,7 +4,7 @@ import Account from "../components/Account";
 import Wishlist from "../components/Wishlist";
 
 const Сabinet = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
 
   const handleStepChange = (newStep) => {
     setStep(newStep);

@@ -15,6 +15,7 @@ const App = () => {
   const [flowers, setFlowers] = useState([]);
   const [count, setCount] = useState(1);
   const [mapCart, setmapCart] = useState([]);
+  const [mapItem, setmapItem] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +33,12 @@ const App = () => {
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("buyFlower")) || [];
     setmapCart(storedCartItems);
+  }, []);
+
+  useEffect(() => {
+    const storedListItems =
+      JSON.parse(localStorage.getItem("wishFlower")) || [];
+    setmapItem(storedListItems);
   }, []);
 
   const increment = () => {
@@ -65,7 +72,29 @@ const App = () => {
       cartItems.push(buyFlower);
     }
     localStorage.setItem("buyFlower", JSON.stringify(cartItems));
-    alert("Added to cart successfully!");
+  };
+
+  const addToWishlist = (flower) => {
+    const wishFlower = {
+      id: flower.id,
+      name: flower.scientific_name,
+      image: flower.online_img,
+      date: flower.year,
+      category: flower.category,
+    };
+
+    let wishlistItems = JSON.parse(localStorage.getItem("wishFlower")) || [];
+    const existingIndex = wishlistItems.findIndex(
+      (item) => item.id === wishFlower.id,
+    );
+
+    if (existingIndex === -1) {
+      wishlistItems.push(wishFlower);
+      localStorage.setItem("wishFlower", JSON.stringify(wishlistItems));
+      alert("Added to wishlist successfully!");
+    } else {
+      alert("Item is already in the wishlist!");
+    }
   };
 
   return (
@@ -80,6 +109,8 @@ const App = () => {
         addToCart,
         mapCart,
         setmapCart,
+        addToWishlist,
+        mapItem,
       }}
     >
       <div className="relative w-full bg-[#FFFFFF]">

@@ -134,7 +134,7 @@ const SingleInfo = () => {
                   Short Description:
                 </h4>
                 <p className="mb-6 leading-6 text-oridinary">
-                  {flower.synonyms.join(" ")}
+                  {flower.synonyms.slice(0, 10).join(" ")}
                 </p>
                 <h4 className="mb-[10px] text-[15px] font-medium">Size</h4>
                 <div className="mb-6 flex items-center gap-[10px]">
