@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"json-server src/db/data.json --port 1666 --watch\" \"vite\"",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "json-server src/db/data.json --port 1666 --watch & react-scripts start"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@mui/icons-material": "^5.15.13",
     "@reduxjs/toolkit": "^2.2.2",
     "axios": "^1.6.8",
+    "concurrently": "^8.2.2",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

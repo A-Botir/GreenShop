@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { UseAllContext } from "../App";
 import {
   Navigation,
@@ -16,10 +16,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
-
-import Slide1 from "../assets/images/photos/main/card/image  5.jpg";
-import Slide2 from "../assets/images/photos/main/card/image  6.jpg";
-import Slide3 from "../assets/images/photos/main/card/image  7.jpg";
 
 const PlantSlider = () => {
   const location = useLocation();
@@ -108,26 +104,28 @@ const PlantSlider = () => {
                       />
                     </svg>
                   </button>
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
-                    <svg
-                      width="20.000000"
-                      height="20.000000"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                    >
-                      <defs />
-                      <path
-                        className="hoverable"
-                        id="Vector"
-                        d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
-                        fill="#3D3D3D"
-                        fillOpacity="1.000000"
-                        fillRule="nonzero"
-                      />
-                    </svg>
-                  </button>
+                  <NavLink to={`/shop/${flower.id}`}>
+                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                      <svg
+                        width="20.000000"
+                        height="20.000000"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs />
+                        <path
+                          className="hoverable"
+                          id="Vector"
+                          d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
+                          fill="#3D3D3D"
+                          fillOpacity="1.000000"
+                          fillRule="nonzero"
+                        />
+                      </svg>
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             ))}
@@ -186,26 +184,28 @@ const PlantSlider = () => {
                       />
                     </svg>
                   </button>
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
-                    <svg
-                      width="20.000000"
-                      height="20.000000"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                    >
-                      <defs />
-                      <path
-                        className="hoverable"
-                        id="Vector"
-                        d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
-                        fill="#3D3D3D"
-                        fillOpacity="1.000000"
-                        fillRule="nonzero"
-                      />
-                    </svg>
-                  </button>
+                  <NavLink to={`/shop/${flower.id}`}>
+                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                      <svg
+                        width="20.000000"
+                        height="20.000000"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs />
+                        <path
+                          className="hoverable"
+                          id="Vector"
+                          d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
+                          fill="#3D3D3D"
+                          fillOpacity="1.000000"
+                          fillRule="nonzero"
+                        />
+                      </svg>
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             ))}
@@ -264,26 +264,28 @@ const PlantSlider = () => {
                       />
                     </svg>
                   </button>
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
-                    <svg
-                      width="20.000000"
-                      height="20.000000"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                    >
-                      <defs />
-                      <path
-                        className="hoverable"
-                        id="Vector"
-                        d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
-                        fill="#3D3D3D"
-                        fillOpacity="1.000000"
-                        fillRule="nonzero"
-                      />
-                    </svg>
-                  </button>
+                  <NavLink to={`/shop/${flower.id}`}>
+                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                      <svg
+                        width="20.000000"
+                        height="20.000000"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs />
+                        <path
+                          className="hoverable"
+                          id="Vector"
+                          d="M14.56 16C10.57 19.18 4.98 18.3 2.02 14.65C-0.83 11.12 -0.65 6.04 2.44 2.82C5.64 -0.51 10.68 -0.95 14.32 1.78C15.63 2.76 16.61 4 17.24 5.5C17.88 7.02 18.07 8.59 17.85 10.22C17.63 11.83 16.99 13.27 15.94 14.62C16.02 14.67 16.11 14.71 16.18 14.78C17.33 15.93 18.48 17.08 19.63 18.23C19.91 18.5 20.04 18.82 19.96 19.2C19.8 19.96 18.9 20.25 18.32 19.73C18.04 19.49 17.79 19.22 17.54 18.96C16.59 18.01 15.64 17.06 14.69 16.12C14.65 16.08 14.61 16.04 14.56 16ZM15.95 8.98C15.96 5.12 12.84 2 8.97 2C5.12 1.99 2 5.09 1.98 8.94C1.97 12.81 5.08 15.94 8.96 15.96C12.8 15.98 15.94 12.84 15.95 8.98Z"
+                          fill="#3D3D3D"
+                          fillOpacity="1.000000"
+                          fillRule="nonzero"
+                        />
+                      </svg>
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             ))}
