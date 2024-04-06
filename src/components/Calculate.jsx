@@ -26,7 +26,7 @@ const Calculate = () => {
       localStorage.setItem("buyFlower", JSON.stringify(updatedCart));
     }
   };
-
+  
   const totalAmount =
     mapCart.reduce((total, item) => total + item.prices * item.counts, 0) - 16;
 

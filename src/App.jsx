@@ -111,6 +111,7 @@ const App = () => {
         setmapCart,
         addToWishlist,
         mapItem,
+        setmapItem,
       }}
     >
       <div className="relative w-full bg-[#FFFFFF]">

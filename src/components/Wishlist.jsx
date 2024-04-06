@@ -7,10 +7,10 @@ const Wishlist = () => {
   const { mapItem, setmapItem, addToCart } = useContext(UseAllContext);
 
   const deleteWish = (id) => {
-    const updatedWishFlowers = wishFlowers.filter((item) => item.id !== id);
-    setWishFlowers(updatedWishFlowers);
+    const updatedWishFlowers = mapItem.filter((item) => item.id !== id);
+    setmapItem(updatedWishFlowers);
     localStorage.setItem("wishFlower", JSON.stringify(updatedWishFlowers));
-    const parentElement = document.getElementById(`wishItem_${id}`);
+    const parentElement = document.getElementById(`wishFlower${id}`);
     if (parentElement) {
       parentElement.remove();
     }
@@ -143,7 +143,7 @@ const Wishlist = () => {
                 <div className="cardbtn_group absolute right-2 top-2 z-[13] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                   <button
                     className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
-                    onClick={() => addToCart(flower)}
+                    onClick={() => addToCart(item)}
                   >
                     <svg
                       width="20.000000"
@@ -164,7 +164,7 @@ const Wishlist = () => {
                       />
                     </svg>
                   </button>
-                  <NavLink to={`shop/${item.id}`}>
+                  <NavLink to={`/shop/${item.id}`}>
                     <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
                       <svg
                         width="20.000000"
