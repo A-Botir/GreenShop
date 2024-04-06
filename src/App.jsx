@@ -14,6 +14,7 @@ const App = () => {
   const [hidden, setHidden] = useState(true);
   const [flowers, setFlowers] = useState([]);
   const [count, setCount] = useState(1);
+  const [mapCart, setmapCart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,11 @@ const App = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("buyFlower")) || [];
+    setmapCart(storedCartItems);
+  }, []);
+
   const increment = () => {
     setCount(count + 1);
   };
@@ -38,16 +44,42 @@ const App = () => {
     }
   };
 
+  const addToCart = (flower) => {
+    const buyFlower = {
+      id: flower.id,
+      name: flower.common_name,
+      image: flower.online_img,
+      counts: count,
+      prices: flower.price,
+      sku: flower.genus_id,
+    };
+
+    let cartItems = JSON.parse(localStorage.getItem("buyFlower")) || [];
+    const existingIndex = cartItems.findIndex(
+      (item) => item.id === buyFlower.id,
+    );
+
+    if (existingIndex !== -1) {
+      cartItems[existingIndex].counts = count;
+    } else {
+      cartItems.push(buyFlower);
+    }
+    localStorage.setItem("buyFlower", JSON.stringify(cartItems));
+    alert("Added to cart successfully!");
+  };
+
   return (
     <UseAllContext.Provider
       value={{
         hidden,
         setHidden,
         flowers,
-        setFlowers,
         decrement,
         increment,
         count,
+        addToCart,
+        mapCart,
+        setmapCart,
       }}
     >
       <div className="relative w-full bg-[#FFFFFF]">
@@ -61,8 +93,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/shop/:id" element={<SinglePage />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/shopcart" element={<ShopCart />} />
+            <Route path="/shop/checkout" element={<Checkout />} />
+            <Route path="/shop/shopcart" element={<ShopCart />} />
             <Route path="/cabinat" element={<Cabinet />} />
           </Routes>
           <Footer />

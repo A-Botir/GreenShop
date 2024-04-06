@@ -9,9 +9,10 @@ const SingleInfo = () => {
   const [value, setValue] = React.useState(0);
   const params = useParams();
   const [step, setStep] = useState(1);
-  const { flowers, setFlowers, increment, decrement, count } =
+  const { flowers, increment, decrement, count, addToCart } =
     useContext(UseAllContext);
   const [mainImage, setMainImage] = useState("");
+  const [activeButton, setActiveButton] = useState("");
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
@@ -21,7 +22,9 @@ const SingleInfo = () => {
     setMainImage(newImage);
   };
 
-  const flowerId = parseInt(params.id);
+  const handleBtnSize = (size) => {
+    setActiveButton(size);
+  };
 
   return (
     <section>
@@ -34,7 +37,6 @@ const SingleInfo = () => {
       {flowers
         .filter((flower) => +flower.id === +params.id)
         .map((flower) => {
-          console.log(flower);
           return (
             <div
               className="mb-24 grid w-full grid-cols-2 gap-[52px]"
@@ -136,16 +138,29 @@ const SingleInfo = () => {
                 </p>
                 <h4 className="mb-[10px] text-[15px] font-medium">Size</h4>
                 <div className="mb-6 flex items-center gap-[10px]">
-                  <button className="h-8 w-8 rounded-xl border border-[#EAEAEA] p-[2px] text-[18px] font-medium  active:border-check active:font-bold active:text-check">
+                  <button
+                    className={`h-8 w-8 rounded-xl border  p-[2px] text-[18px] font-medium  hover:border-check hover:font-bold hover:text-check ${activeButton === "S" ? "border-check font-bold text-check " : "border-[#EAEAEA]"}`}
+                    onClick={() => handleBtnSize("S")}
+                  >
                     S
                   </button>
-                  <button className="h-8 w-8 rounded-xl border border-[#EAEAEA] p-[2px] text-[18px] font-medium  active:border-check active:font-bold active:text-check">
+                  <button
+                    className={`h-8 w-8 rounded-xl border  p-[2px] text-[18px] font-medium  hover:border-check hover:font-bold hover:text-check 
+          ${activeButton === "M" ? "border-check font-bold text-check " : "border-[#EAEAEA]"}`}
+                    onClick={() => handleBtnSize("M")}
+                  >
                     M
                   </button>
-                  <button className="h-8 w-8 rounded-xl border border-[#EAEAEA] p-[2px] text-[18px] font-medium  active:border-check active:font-bold active:text-check">
+                  <button
+                    className={`h-8 w-8 rounded-xl border  p-[2px] text-[18px] font-medium  hover:border-check hover:font-bold hover:text-check ${activeButton === "L" ? "border-check font-bold text-check " : "border-[#EAEAEA]"}`}
+                    onClick={() => handleBtnSize("L")}
+                  >
                     L
                   </button>
-                  <button className="h-8 w-8 rounded-xl border border-[#EAEAEA] p-[2px] text-[18px] font-medium  active:border-check active:font-bold active:text-check">
+                  <button
+                    className={`h-8 w-8 rounded-xl border  p-[2px] text-[18px] font-medium  hover:border-check hover:font-bold hover:text-check ${activeButton === "XL" ? "border-check font-bold text-check " : "border-[#EAEAEA]"}`}
+                    onClick={() => handleBtnSize("XL")}
+                  >
                     XL
                   </button>
                 </div>
@@ -166,21 +181,24 @@ const SingleInfo = () => {
                     </button>
                   </div>
                   <div className="flex items-center gap-[10px]">
-                    <Button
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "#46A358",
-                        color: "white",
-                        fontWeight: "700",
-                        paddingX: "32px",
-                        "&:hover": {
+                    <NavLink to="/shop/shopcart">
+                      <Button
+                        variant="contained"
+                        sx={{
                           backgroundColor: "#46A358",
-                        },
-                      }}
-                    >
-                      Buy NOW
-                    </Button>
+                          color: "white",
+                          fontWeight: "700",
+                          paddingX: "32px",
+                          "&:hover": {
+                            backgroundColor: "#46A358",
+                          },
+                        }}
+                      >
+                        Buy NOW
+                      </Button>
+                    </NavLink>
                     <Button
+                      onClick={() => addToCart(flower)}
                       variant="outlined"
                       color="success"
                       sx={{

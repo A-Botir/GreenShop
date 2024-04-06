@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const itemsPerPage = 9;
 
 const CardList = () => {
-  const { flowers, setFlowers } = useContext(UseAllContext);
+  const { flowers, addToCart } = useContext(UseAllContext);
   const [value, setValue] = React.useState("one");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -89,7 +89,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                      <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -169,7 +172,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                      <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -249,7 +255,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                      <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -358,7 +367,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                         <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -438,7 +450,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                         <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -518,7 +533,10 @@ const CardList = () => {
                       className="max-h-full max-w-full object-cover"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                      <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                         <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
                         <svg
                           width="20.000000"
                           height="19.000000"
@@ -630,26 +648,29 @@ const CardList = () => {
                         className="max-h-full max-w-full object-cover"
                       />
                       <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
-                          <svg
-                            width="20.000000"
-                            height="19.000000"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                          >
-                            <defs />
-                            <path
-                              className="hoverable"
-                              id="Vector"
-                              d="M14.29 15.87L8.24 15.87C5.65 15.87 3.55 13.77 3.55 11.18L3.55 6.38C3.55 3.98 2.35 1.75 0.35 0.43C-0.01 0.19 -0.11 -0.29 0.12 -0.65C0.36 -1.01 0.85 -1.11 1.21 -0.87C2.35 -0.12 3.28 0.88 3.94 2.02C4.09 2.18 5.24 3.41 7.14 3.41L16.14 3.41C18.59 3.36 20.51 5.83 19.87 8.2L18.83 12.32C18.31 14.41 16.44 15.87 14.29 15.87ZM4.91 4.53C5.04 5.13 5.11 5.75 5.11 6.38L5.11 11.18C5.11 12.91 6.51 14.31 8.24 14.31L14.29 14.31C15.72 14.31 16.97 13.34 17.32 11.94L18.35 7.82C18.74 6.41 17.59 4.95 16.14 4.97L7.14 4.97C6.28 4.97 5.54 4.79 4.91 4.53ZM7.85 18.02C7.85 17.48 7.41 17.04 6.87 17.04C5.57 17.09 5.57 18.94 6.87 18.99C7.41 18.99 7.85 18.56 7.85 18.02ZM15.62 18.02C15.62 17.48 15.18 17.04 14.64 17.04C13.35 17.09 13.35 18.94 14.64 18.99C15.18 18.99 15.62 18.56 15.62 18.02ZM16.92 7.32C16.92 6.88 16.57 6.54 16.14 6.54L7.45 6.54C6.42 6.58 6.42 8.06 7.45 8.1L16.14 8.1C16.57 8.1 16.92 7.75 16.92 7.32Z"
-                              fill="#3D3D3D"
-                              fillOpacity="1.000000"
-                              fillRule="nonzero"
-                            />
-                          </svg>
-                        </button>
+                          <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
+                        <svg
+                          width="20.000000"
+                          height="19.000000"
+                          viewBox="0 0 20 19"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                        >
+                          <defs />
+                          <path
+                            className="hoverable"
+                            id="Vector"
+                            d="M14.29 15.87L8.24 15.87C5.65 15.87 3.55 13.77 3.55 11.18L3.55 6.38C3.55 3.98 2.35 1.75 0.35 0.43C-0.01 0.19 -0.11 -0.29 0.12 -0.65C0.36 -1.01 0.85 -1.11 1.21 -0.87C2.35 -0.12 3.28 0.88 3.94 2.02C4.09 2.18 5.24 3.41 7.14 3.41L16.14 3.41C18.59 3.36 20.51 5.83 19.87 8.2L18.83 12.32C18.31 14.41 16.44 15.87 14.29 15.87ZM4.91 4.53C5.04 5.13 5.11 5.75 5.11 6.38L5.11 11.18C5.11 12.91 6.51 14.31 8.24 14.31L14.29 14.31C15.72 14.31 16.97 13.34 17.32 11.94L18.35 7.82C18.74 6.41 17.59 4.95 16.14 4.97L7.14 4.97C6.28 4.97 5.54 4.79 4.91 4.53ZM7.85 18.02C7.85 17.48 7.41 17.04 6.87 17.04C5.57 17.09 5.57 18.94 6.87 18.99C7.41 18.99 7.85 18.56 7.85 18.02ZM15.62 18.02C15.62 17.48 15.18 17.04 14.64 17.04C13.35 17.09 13.35 18.94 14.64 18.99C15.18 18.99 15.62 18.56 15.62 18.02ZM16.92 7.32C16.92 6.88 16.57 6.54 16.14 6.54L7.45 6.54C6.42 6.58 6.42 8.06 7.45 8.1L16.14 8.1C16.57 8.1 16.92 7.75 16.92 7.32Z"
+                            fill="#3D3D3D"
+                            fillOpacity="1.000000"
+                            fillRule="nonzero"
+                          />
+                        </svg>
+                      </button>
                         <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
                           <svg
                             width="20"
@@ -717,26 +738,29 @@ const CardList = () => {
                         className="max-h-full max-w-full object-cover"
                       />
                       <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
-                          <svg
-                            width="20.000000"
-                            height="19.000000"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                          >
-                            <defs />
-                            <path
-                              className="hoverable"
-                              id="Vector"
-                              d="M14.29 15.87L8.24 15.87C5.65 15.87 3.55 13.77 3.55 11.18L3.55 6.38C3.55 3.98 2.35 1.75 0.35 0.43C-0.01 0.19 -0.11 -0.29 0.12 -0.65C0.36 -1.01 0.85 -1.11 1.21 -0.87C2.35 -0.12 3.28 0.88 3.94 2.02C4.09 2.18 5.24 3.41 7.14 3.41L16.14 3.41C18.59 3.36 20.51 5.83 19.87 8.2L18.83 12.32C18.31 14.41 16.44 15.87 14.29 15.87ZM4.91 4.53C5.04 5.13 5.11 5.75 5.11 6.38L5.11 11.18C5.11 12.91 6.51 14.31 8.24 14.31L14.29 14.31C15.72 14.31 16.97 13.34 17.32 11.94L18.35 7.82C18.74 6.41 17.59 4.95 16.14 4.97L7.14 4.97C6.28 4.97 5.54 4.79 4.91 4.53ZM7.85 18.02C7.85 17.48 7.41 17.04 6.87 17.04C5.57 17.09 5.57 18.94 6.87 18.99C7.41 18.99 7.85 18.56 7.85 18.02ZM15.62 18.02C15.62 17.48 15.18 17.04 14.64 17.04C13.35 17.09 13.35 18.94 14.64 18.99C15.18 18.99 15.62 18.56 15.62 18.02ZM16.92 7.32C16.92 6.88 16.57 6.54 16.14 6.54L7.45 6.54C6.42 6.58 6.42 8.06 7.45 8.1L16.14 8.1C16.57 8.1 16.92 7.75 16.92 7.32Z"
-                              fill="#3D3D3D"
-                              fillOpacity="1.000000"
-                              fillRule="nonzero"
-                            />
-                          </svg>
-                        </button>
+                          <button
+                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        onClick={() => addToCart(flower)}
+                      >
+                        <svg
+                          width="20.000000"
+                          height="19.000000"
+                          viewBox="0 0 20 19"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                        >
+                          <defs />
+                          <path
+                            className="hoverable"
+                            id="Vector"
+                            d="M14.29 15.87L8.24 15.87C5.65 15.87 3.55 13.77 3.55 11.18L3.55 6.38C3.55 3.98 2.35 1.75 0.35 0.43C-0.01 0.19 -0.11 -0.29 0.12 -0.65C0.36 -1.01 0.85 -1.11 1.21 -0.87C2.35 -0.12 3.28 0.88 3.94 2.02C4.09 2.18 5.24 3.41 7.14 3.41L16.14 3.41C18.59 3.36 20.51 5.83 19.87 8.2L18.83 12.32C18.31 14.41 16.44 15.87 14.29 15.87ZM4.91 4.53C5.04 5.13 5.11 5.75 5.11 6.38L5.11 11.18C5.11 12.91 6.51 14.31 8.24 14.31L14.29 14.31C15.72 14.31 16.97 13.34 17.32 11.94L18.35 7.82C18.74 6.41 17.59 4.95 16.14 4.97L7.14 4.97C6.28 4.97 5.54 4.79 4.91 4.53ZM7.85 18.02C7.85 17.48 7.41 17.04 6.87 17.04C5.57 17.09 5.57 18.94 6.87 18.99C7.41 18.99 7.85 18.56 7.85 18.02ZM15.62 18.02C15.62 17.48 15.18 17.04 14.64 17.04C13.35 17.09 13.35 18.94 14.64 18.99C15.18 18.99 15.62 18.56 15.62 18.02ZM16.92 7.32C16.92 6.88 16.57 6.54 16.14 6.54L7.45 6.54C6.42 6.58 6.42 8.06 7.45 8.1L16.14 8.1C16.57 8.1 16.92 7.75 16.92 7.32Z"
+                            fill="#3D3D3D"
+                            fillOpacity="1.000000"
+                            fillRule="nonzero"
+                          />
+                        </svg>
+                      </button>
                         <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
                           <svg
                             width="20"

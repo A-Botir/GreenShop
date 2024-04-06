@@ -1,105 +1,102 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { RadioGroup, FormControlLabel, Button } from "@mui/material";
-import Img from "../assets/images/photos/main/card/image  2.jpg";
+import { UseAllContext } from "../App";
+
 import Cards from "../assets/images/photos/footer/cards.svg";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Payment = () => {
+  const { mapCart, setmapCart } = useContext(UseAllContext);
   const [selectedValue, setSelectedValue] = useState("none");
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
   };
+
+  const totalAmount =
+    mapCart.reduce((total, item) => total + item.prices * item.counts, 0) - 16;
+
   return (
     <div className="col-span-3">
       <h3 className="col-span-1 mb-5 text-[17px] font-bold">Your Order</h3>
       <div>
-        <table class="w-full border-separate border-spacing-y-[10px]">
+        <table className="w-full border-separate border-spacing-y-[10px]">
           <thead>
-            <tr class="bg-gray-200 border-b">
-              <th class="px-4 py-2 text-left text-[16px] font-medium">
+            <tr className="bg-gray-200 border-b">
+              <th className="px-4 py-2 text-left text-[16px] font-medium">
                 Products
               </th>
-              <th class="px-5 py-2 text-left text-[16px] font-medium"></th>
-              <th class="px-10 py-2 text-left text-[16px] font-medium">
+              <th className="px-5 py-2 text-left text-[16px] font-medium"></th>
+              <th className="px-10 py-2 text-left text-[16px] font-medium">
                 Subtotal
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr class=" bg-grey">
-              <td class="flex max-h-[72px] items-center gap-3">
-                <img
-                  src={Img}
-                  alt="table img info"
-                  className="h-[66px] w-[66px] object-fill md:h-[50px] md:w-[50px]"
-                />
-                <div>
-                  <h4 class="text-[15px] font-medium">Barberton Daisy</h4>
-                  <p class="text-oridinary">
-                    <span className="text-[#A5A5A5.]">SKU:</span> 1995751877966
-                  </p>
-                </div>
-              </td>
-              <td class="px-5 text-center">
-                <p className=" text-oridinary">{"(x2)"}</p>
-              </td>
-              <td class="px-10 text-right">
-                <p class="text-[18px] font-bold text-check">$238.00</p>
-              </td>
-            </tr>
-            <tr class=" bg-grey">
-              <td class="flex max-h-[72px] items-center gap-3">
-                <img
-                  src={Img}
-                  alt="table img info"
-                  className="h-[66px] w-[66px] object-fill md:h-[50px] md:w-[50px]"
-                />
-                <div>
-                  <h4 class="text-[15px] font-medium">Blushing Bromeliad</h4>
-                  <p class="text-oridinary">
-                    <span className="text-[#A5A5A5]">SKU:</span> 19957518757065
-                  </p>
-                </div>
-              </td>
-              <td class="px-5 text-center">
-                <p className=" text-oridinary">{"(x6)"}</p>
-              </td>
-              <td class="px-10 text-right">
-                <p class="text-[18px] font-bold text-check">$834.00</p>
-              </td>
-            </tr>
-            <tr class=" bg-grey">
-              <td class="flex max-h-[72px] items-center gap-3">
-                <img
-                  src={Img}
-                  alt="table img info"
-                  className="h-[66px] w-[66px] object-fill md:h-[50px] md:w-[50px]"
-                />
-                <div>
-                  <h4 class="text-[15px] font-medium">Aluminum Plant</h4>
-                  <p class="text-oridinary">
-                    <span className="text-[#A5A5A5]">SKU:</span> 1995751877786
-                  </p>
-                </div>
-              </td>
-              <td class="px-5 text-center">
-                <p className=" text-oridinary">{"(x9)"}</p>
-              </td>
-              <td class="px-10 text-right">
-                <p class="text-[18px] font-bold text-check">$1,611.00</p>
-              </td>
-            </tr>
+            {mapCart.length === 0 ? (
+              <tr className=" bg-grey">
+                <td className="flex max-h-[72px] items-center gap-3">
+                  <img
+                    src="https://inde.io/uploads/491010faa0885af7d22bab1ca5c517c3.jpg"
+                    alt="table img info"
+                    className="h-[66px] w-[66px] object-fill md:h-[50px] md:w-[50px]"
+                  />
+                  <div>
+                    <h4 className="text-[15px] font-medium">Barberton Daisy</h4>
+                    <p className="text-oridinary">
+                      <span className="text-[#A5A5A5.]">SKU:</span>{" "}
+                      1995751877966
+                    </p>
+                  </div>
+                </td>
+                <td className="px-5 text-center">
+                  <p className=" text-oridinary">{"(x1)"}</p>
+                </td>
+                <td className="px-10 text-right">
+                  <p className="text-[18px] font-bold text-check">0.00</p>
+                </td>
+              </tr>
+            ) : (
+              mapCart.map((item, index) => (
+                <tr className=" bg-grey" key={item.id}>
+                  <td className="flex max-h-[72px] items-center gap-3">
+                    <img
+                      src={item.image}
+                      alt="table img info"
+                      className="h-[66px] w-[66px] object-fill md:h-[50px] md:w-[50px]"
+                    />
+                    <div>
+                      <h4 className="text-[15px] font-medium">{item.name}</h4>
+                      <p className="text-oridinary">
+                        <span className="text-[#A5A5A5.]">SKU:</span> 199575187
+                        {item.sku}
+                      </p>
+                    </div>
+                  </td>
+                  <td className="px-5 text-center">
+                    <p className=" text-oridinary">{`(x${item.counts})`}</p>
+                  </td>
+                  <td className="px-10 text-right">
+                    <p className="text-[18px] font-bold text-check">
+                      ${item.prices * item.counts}.00
+                    </p>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
         <div className="mb-12 mt-4">
           <p className="mb-5 text-end">
-            Have a coupon code? <span className="text-check">Click here</span>
+            Have a coupon code?{" "}
+            <span className="cursor-pointer text-check">Click here</span>
           </p>
           <div className="mb-4 flex items-center justify-between">
             <p className="text-[15px]">Subtotal</p>
-            <p className="text-[18px] font-medium">$2,683.00</p>
+            <p className="text-[18px] font-medium">
+              ${(totalAmount + 16).toFixed(2)}
+            </p>
           </div>
           <div className="mb-5 flex items-center justify-between">
             <p className="text-[15px]">Coupon Discount</p>
@@ -114,7 +111,12 @@ const Payment = () => {
           </p>
           <div className="mb-7 flex items-center justify-between">
             <p className="text-[16px] font-bold">Total</p>
-            <p className="text-[18px] font-medium text-check">$2,699.00</p>
+            <p className="text-[18px] font-medium text-check">
+              $
+              {mapCart.length === 0
+                ? (totalAmount + 16).toFixed(2)
+                : totalAmount.toFixed(2)}
+            </p>
           </div>
         </div>
         <h3 className="mb-5 text-[17px] font-bold">Payment Method</h3>

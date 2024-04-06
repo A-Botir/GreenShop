@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IconButton, Button } from "@mui/material";
 import { UseAllContext } from "../App";
 
@@ -8,10 +8,18 @@ import Logo from "../assets/images/icons/Logo.svg";
 const Header = () => {
   const location = useLocation();
   const { setHidden } = useContext(UseAllContext);
+  const [cartItemCount, setCartItemCount] = useState(0);
 
   const handleLoginClick = () => {
     setHidden(false);
   };
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem("buyFlower")) || [];
+    const count = cartItems.length;
+    setCartItemCount(count);
+  }, []);
+  // ишламди, рендер боса ишлавоти 
 
   return (
     <header className=" fixed top-0 z-[80] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
@@ -40,8 +48,8 @@ const Header = () => {
               <li
                 className={`border-b-[3px] hover:font-bold lg:text-[16px] ${
                   location.pathname === "/shop" ||
-                  location.pathname === "/shopcart" ||
-                  location.pathname === "/checkout" ||
+                  location.pathname === "/shop/shopcart" ||
+                  location.pathname === "/shop/checkout" ||
                   location.pathname === "/shop/:id"
                     ? " border-[#46A358] font-bold"
                     : "border-[#fff]"
@@ -51,8 +59,8 @@ const Header = () => {
                   <p
                     className={`${
                       location.pathname === "/shop" ||
-                      location.pathname === "/shopcart" ||
-                      location.pathname === "/checkout" ||
+                      location.pathname === "/shop/shopcart" ||
+                      location.pathname === "/shop/checkout" ||
                       location.pathname === "/shop/:id"
                         ? "font-bold"
                         : ""
@@ -105,7 +113,7 @@ const Header = () => {
                 />
               </svg>
             </IconButton>
-            <NavLink to="/shopcart">
+            <NavLink to="/shop/shopcart">
               <IconButton aria-label="shop">
                 <div className="relative">
                   <svg
@@ -121,7 +129,7 @@ const Header = () => {
                     />
                   </svg>
                   <span className="absolute right-[-6px] top-0 flex h-4 w-4 items-center justify-center rounded-[50%] border border-[white] bg-[#46A358] text-[9px] text-[white]">
-                    13
+                    {cartItemCount}
                   </span>
                 </div>
               </IconButton>

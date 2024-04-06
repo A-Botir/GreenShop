@@ -19,7 +19,7 @@ import "swiper/css/effect-fade";
 
 const PlantSlider = () => {
   const location = useLocation();
-  const { flowers, setFlowers } = useContext(UseAllContext);
+  const { flowers, addToCart } = useContext(UseAllContext);
 
   return (
     <section
@@ -69,7 +69,10 @@ const PlantSlider = () => {
                   </p>
                 </div>
                 <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                  <button
+                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    onClick={() => addToCart(flower)}
+                  >
                     <svg
                       width="20.000000"
                       height="19.000000"
@@ -149,7 +152,10 @@ const PlantSlider = () => {
                   </p>
                 </div>
                 <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                  <button
+                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    onClick={() => addToCart(flower)}
+                  >
                     <svg
                       width="20.000000"
                       height="19.000000"
@@ -229,7 +235,10 @@ const PlantSlider = () => {
                   </p>
                 </div>
                 <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                  <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                  <button
+                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    onClick={() => addToCart(flower)}
+                  >
                     <svg
                       width="20.000000"
                       height="19.000000"
