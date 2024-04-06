@@ -7,7 +7,7 @@ function valuetext(value) {
 }
 
 const Sidebar = () => {
-  const [value, setValue] = React.useState([20, 200]);
+  const [value, setValue] = React.useState([20, 1400]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -57,7 +57,7 @@ const Sidebar = () => {
           <Slider
             getAriaLabel={() => "Price range"}
             sx={{
-              width: 210,
+              width: "80%",
               color: "#46A358",
               "& .MuiSlider-thumb": {
                 backgroundColor: "#46A358",

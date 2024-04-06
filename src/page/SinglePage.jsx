@@ -1,7 +1,9 @@
-import PlantSlider from "../components/PlantSlider";
-import SingleInfo from "../components/SingleInfo";
+import React from "react";
 
-const Shop = () => {
+import SingleInfo from "../components/SingleInfo";
+import PlantSlider from "../components/PlantSlider";
+
+const SinglePage = () => {
   return (
     <div>
       <SingleInfo />
@@ -10,4 +12,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default SinglePage;

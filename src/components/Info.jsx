@@ -13,10 +13,10 @@ const Info = () => {
             alt="position img"
             className="absolute left-[8%] top-[-16%] w-[38%] sm:left-[5] sm:w-[30%]"
           />
-          <h3 className="mb-2 text-right text-[18px] font-black leading-6 sm:mb-5 sm:text-[16px] sm:leading-5">
+          <h3 className="mb-2 text-right text-[18px] font-black leading-6 sm:mb-5 sm:text-[16px] sm:leading-5 md:mb-6">
             Summer cactus <br /> & succulents
           </h3>
-          <p className="mb-6 text-right leading-6 text-oridinary sm:mb-4 sm:text-[13px] sm:leading-4">
+          <p className="mb-6 text-right leading-6 text-oridinary sm:mb-4 sm:text-[13px] sm:leading-4 md:mb-2">
             We are an online plant shop offering a wide <br /> range of cheap
             and trendy plants
           </p>
@@ -68,10 +68,10 @@ const Info = () => {
             alt="position img"
             className="absolute left-[8%] top-[-16%] w-[38%] sm:left-[5] sm:w-[30%]"
           />
-          <h3 className="mb-2 text-right text-[18px] font-black leading-6 sm:mb-5 sm:text-[16px] sm:leading-5">
+          <h3 className="mb-2 text-right text-[18px] font-black leading-6 sm:mb-5 sm:text-[16px] sm:leading-5 md:mb-6">
             Summer cactus <br /> & succulents
           </h3>
-          <p className="mb-6 text-right leading-6 text-oridinary sm:mb-4 sm:text-[13px] sm:leading-4 ">
+          <p className="mb-6 text-right leading-6 text-oridinary sm:mb-4 sm:text-[13px] sm:leading-4 md:mb-2 ">
             We are an online plant shop offering a wide <br /> range of cheap
             and trendy plants
           </p>

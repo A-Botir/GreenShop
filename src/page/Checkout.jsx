@@ -1,10 +1,26 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
+import Labels from "../components/Labels";
+import Payment from "../components/Payment";
 
 const Checkout = () => {
   return (
-    <div>
-      <p>3</p>
-    </div>
+    <section className="mb-[210px]">
+      <div className="my-9 flex items-center sm:hidden">
+        <NavLink to="/">
+          <p className="text-[15px] font-bold">Home</p>
+        </NavLink>
+        &nbsp;/&nbsp;
+        <NavLink to="/shop">
+          <p className="text-[15px]">Shop</p>
+        </NavLink>
+        &nbsp;/&nbsp;
+        <p className="text-[15px]"> Checkout</p>
+      </div>
+      <form className="grid grid-cols-8 gap-[72px]">
+        <Labels />
+        <Payment />
+      </form>
+    </section>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className="fixed top-0 z-[99] hidden w-full bg-grey sm:static sm:block sm:flex-grow sm:rounded-lg">
+    <div className="fixed top-0 z-[89] hidden w-full bg-grey sm:static sm:block sm:flex-grow sm:rounded-lg">
       <div className="md:container lg:container">
         <form className="flex items-center gap-2 py-6 sm:px-3 sm:py-2">
           <div className="flex w-full items-center gap-2">

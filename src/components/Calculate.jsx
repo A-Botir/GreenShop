@@ -1,8 +1,13 @@
 import { IconButton, Button } from "@mui/material";
+import { UseAllContext } from "../App";
+import { useContext } from "react";
 
 import Img from "../assets/images/photos/main/card/image  3.jpg";
+import { NavLink } from "react-router-dom";
 
 const Calculate = () => {
+  const { increment, decrement, count } = useContext(UseAllContext);
+
   return (
     <section className="flex items-start gap-[86px]">
       <div>
@@ -44,12 +49,18 @@ const Calculate = () => {
               </td>
               <td class="px-8 text-center">
                 <div className="flex items-center gap-6">
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
-                    +
-                  </button>
-                  <p className="text-[20px]">1</p>
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={decrement}
+                  >
                     −
+                  </button>
+                  <p className="text-[20px]">{count}</p>
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={increment}
+                  >
+                    +
                   </button>
                 </div>
               </td>
@@ -65,7 +76,7 @@ const Calculate = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
                     >
                       <defs />
                       <rect
@@ -73,34 +84,34 @@ const Calculate = () => {
                         width="24.000000"
                         height="24.000000"
                         fill="#FFFFFF"
-                        fill-opacity="0"
+                        fillOpacity="0"
                       />
                       <path
                         id="Stroke 1"
                         d="M18.88 9.55C18.88 17.57 20.04 21.19 12.27 21.19C4.51 21.19 5.69 17.57 5.69 9.55"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 3"
                         d="M20.36 6.47L4.21 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 5"
                         d="M15.71 6.47C15.71 6.47 16.24 2.71 12.28 2.71C8.33 2.71 8.86 6.47 8.86 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </div>
@@ -127,12 +138,18 @@ const Calculate = () => {
               </td>
               <td class="px-8 text-center">
                 <div className="flex items-center gap-6">
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
-                    +
-                  </button>
-                  <p className="text-[20px]">6</p>
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={decrement}
+                  >
                     −
+                  </button>
+                  <p className="text-[20px]">{count}</p>
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={increment}
+                  >
+                    +
                   </button>
                 </div>
               </td>
@@ -148,7 +165,7 @@ const Calculate = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
                     >
                       <defs />
                       <rect
@@ -156,34 +173,34 @@ const Calculate = () => {
                         width="24.000000"
                         height="24.000000"
                         fill="#FFFFFF"
-                        fill-opacity="0"
+                        fillOpacity="0"
                       />
                       <path
                         id="Stroke 1"
                         d="M18.88 9.55C18.88 17.57 20.04 21.19 12.27 21.19C4.51 21.19 5.69 17.57 5.69 9.55"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 3"
                         d="M20.36 6.47L4.21 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 5"
                         d="M15.71 6.47C15.71 6.47 16.24 2.71 12.28 2.71C8.33 2.71 8.86 6.47 8.86 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </div>
@@ -210,12 +227,18 @@ const Calculate = () => {
               </td>
               <td class="px-8 text-center">
                 <div className="flex items-center gap-6">
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
-                    +
-                  </button>
-                  <p className="text-[20px]">9</p>
-                  <button className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]">
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={decrement}
+                  >
                     −
+                  </button>
+                  <p className="text-[20px]">{count}</p>
+                  <button
+                    className="h-9 w-9 rounded-[50%] bg-check text-[28px] text-[#fff]"
+                    onClick={increment}
+                  >
+                    +
                   </button>
                 </div>
               </td>
@@ -231,7 +254,7 @@ const Calculate = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
                     >
                       <defs />
                       <rect
@@ -239,34 +262,34 @@ const Calculate = () => {
                         width="24.000000"
                         height="24.000000"
                         fill="#FFFFFF"
-                        fill-opacity="0"
+                        fillOpacity="0"
                       />
                       <path
                         id="Stroke 1"
                         d="M18.88 9.55C18.88 17.57 20.04 21.19 12.27 21.19C4.51 21.19 5.69 17.57 5.69 9.55"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 3"
                         d="M20.36 6.47L4.21 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                       <path
                         id="Stroke 5"
                         d="M15.71 6.47C15.71 6.47 16.24 2.71 12.28 2.71C8.33 2.71 8.86 6.47 8.86 6.47"
                         stroke="#727272"
-                        stroke-opacity="1.000000"
-                        stroke-width="1.500000"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
+                        strokeOpacity="1.000000"
+                        strokeWidth="1.500000"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </div>
@@ -281,12 +304,12 @@ const Calculate = () => {
           Cart Totals
         </h3>
         <label htmlFor="coupon">Coupon Apply</label>
-        <div className="mb-7 mt-2 flex items-center border border-check">
+        <div className="mb-7 mt-2 flex items-center justify-between border border-check">
           <input
             type="text"
             placeholder="Enter coupon code here..."
             id="coupon"
-            className="border-none px-3 py-2 outline-none"
+            className="flex-grow border-none px-3 py-2 outline-none"
           />
           <Button
             variant="contained"
@@ -342,20 +365,22 @@ const Calculate = () => {
             Proceed To Checkout
           </span>
         </Button>
-        <Button
-          variant="text"
-          color="success"
-          sx={{
-            textTransform: "none",
-            color: "#46A358",
-            width: "100%",
-            paddingY: "12px",
-          }}
-        >
-          <span className="text-[15px] text-check md:text-[14px]">
-            Continue Shopping
-          </span>
-        </Button>
+        <NavLink to="/checkout">
+          <Button
+            variant="text"
+            color="success"
+            sx={{
+              textTransform: "none",
+              color: "#46A358",
+              width: "100%",
+              paddingY: "12px",
+            }}
+          >
+            <span className="text-[15px] text-check md:text-[14px]">
+              Continue Shopping
+            </span>
+          </Button>
+        </NavLink>
       </div>
     </section>
   );

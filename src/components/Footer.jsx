@@ -9,10 +9,16 @@ import Cactus from "../assets/images/photos/footer/Cactus.svg";
 
 const Footer = () => {
   const location = useLocation();
+
+  const handlePhoneCall = () => {
+    const phoneNumber = "+8801911717490";
+    window.open(`tel:${phoneNumber}`, "_self");
+  };
+
   return (
     <footer className="py-[6px] sm:py-1">
-      <div className="grid grid-cols-9 gap-10 bg-[#FBFBFB] px-6 pb-6 pt-7 sm:grid-cols-1 sm:gap-4">
-        <div className="col-span-6 grid grid-cols-10 gap-5 sm:col-span-1">
+      <div className="grid grid-cols-9 gap-10 bg-[#FBFBFB] px-6 pb-6 pt-7 sm:grid-cols-1 sm:gap-4 md:grid-cols-1">
+        <div className="col-span-6 grid grid-cols-10 gap-5 sm:col-span-1 md:col-span-1">
           <div className="col-span-3">
             <div className="bg-[url('./assets/images/photos/footer/Ellipse.svg')] bg-left-bottom bg-no-repeat pl-4 sm:pl-2">
               <img src={PotTop} alt="footer img" />
@@ -55,13 +61,13 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="col-span-3 sm:col-span-1">
+        <div className="col-span-3 sm:col-span-1 md:col-span-1 ">
           <h4 className="mb-4 text-[17px] font-bold sm:mb-2 sm:text-[14px]">
             Would you like to join newsletters?
           </h4>
           <form
             id="footer-form"
-            className="mb-4 flex w-full items-center shadow-footerform"
+            className="mb-4 flex w-full items-center shadow-footerform md:w-[80%]"
           >
             <input
               type="email"
@@ -87,41 +93,48 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-10 border-y border-[#46A35880] bg-[#46A3581A] px-6 py-8 sm:flex-col sm:gap-5 sm:px-3 sm:py-4">
-        <div className="">
+      <div className="flex items-center gap-10 border-y border-[#46A35880] bg-[#46A3581A] px-6 py-8 sm:flex-col sm:gap-5 sm:px-3 sm:py-4 md:grid md:grid-cols-1 md:justify-center md:gap-6">
+        <div className="md:mx-auto">
           <NavLink to="/">
             <img
               src={Logo}
               alt="logo icon"
-              className="h-[34px] min-w-[150px] md:h-7 md:w-28 "
+              className="h-[34px] min-w-[150px]"
             />
           </NavLink>
         </div>
-        <div className="grid grid-cols-7 items-center gap-16 sm:grid-cols-1 sm:justify-center sm:gap-4">
-          <div className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1">
+        <div className="grid grid-cols-7 items-center justify-center gap-16 sm:grid-cols-1 sm:gap-4 md:items-start md:gap-4">
+          <div className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1 md:col-span-3">
             <svg
-              width="28"
-              height="28"
-              viewBox="0 0 14 18"
+              width="20.000000"
+              height="20.000000"
+              viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
             >
+              <defs />
+              <rect
+                id="Iconly/Curved/Location"
+                width="20.000000"
+                height="20.000000"
+                fill="#FFFFFF"
+                fillOpacity="0"
+              />
               <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.09196 7.92543C9.09196 6.77437 8.15926 5.84167 7.0082 5.84167C5.85799 5.84167 4.92529 6.77437 4.92529 7.92543C4.92529 9.07565 5.85799 10.0083 7.0082 10.0083C8.15926 10.0083 9.09196 9.07565 9.09196 7.92543Z"
+                id="Stroke 1"
+                d="M10 6.84C8.85 6.84 7.92 7.77 7.92 8.92C7.92 10.07 8.85 11 10 11C11.15 11 12.09 10.07 12.09 8.92C12.09 7.77 11.15 6.84 10 6.84Z"
                 stroke="#46A358"
-                strokeWidth="1.5"
-                strokeLinecap="round"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
                 strokeLinejoin="round"
               />
               <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.99959 16.5C4.58457 16.5 0.75 12.2989 0.75 7.8322C0.75 4.33539 3.54758 1.5 6.99959 1.5C10.4516 1.5 13.25 4.33539 13.25 7.8322C13.25 12.2989 9.41543 16.5 6.99959 16.5Z"
+                id="Stroke 3"
+                d="M3.75 8.83C3.75 5.33 6.54 2.5 9.99 2.5C13.45 2.5 16.25 5.33 16.25 8.83C16.25 13.29 12.41 17.5 9.99 17.5C7.58 17.5 3.75 13.29 3.75 8.83Z"
                 stroke="#46A358"
-                strokeWidth="1.5"
-                strokeLinecap="round"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
                 strokeLinejoin="round"
               />
             </svg>
@@ -129,71 +142,95 @@ const Footer = () => {
               70 West Buckingham Ave. Farmingdale, NY 11735
             </p>
           </div>
-          <div className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1">
+          <div className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1 md:gap-1">
             <svg
-              width="20px"
-              height="20px"
+              width="20.000000"
+              height="20.000000"
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M14.6208 7.51581C14.6208 7.51581 11.9457 10.7263 9.98919 10.7263C8.03347 10.7263 5.32837 7.51581 5.32837 7.51581"
-                stroke="#46A358"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <defs />
+              <rect
+                id="Iconly/Curved/Message"
+                width="20.000000"
+                height="20.000000"
+                fill="#FFFFFF"
+                fillOpacity="0"
               />
               <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M2.04346 9.97397C2.04346 4.27556 4.02758 2.37665 9.97997 2.37665C15.9323 2.37665 17.9165 4.27556 17.9165 9.97397C17.9165 15.6716 15.9323 17.5713 9.97997 17.5713C4.02758 17.5713 2.04346 15.6716 2.04346 9.97397Z"
+                id="Stroke 1"
+                d="M14.62 7.51C14.62 7.51 11.94 10.72 9.98 10.72C8.03 10.72 5.32 7.51 5.32 7.51"
                 stroke="#46A358"
-                strokeWidth="1.5"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
+                strokeLinejoin="round"
                 strokeLinecap="round"
+              />
+              <path
+                id="Stroke 3"
+                d="M9.97 2.37C15.93 2.37 17.91 4.27 17.91 9.97C17.91 15.67 15.93 17.57 9.97 17.57C4.02 17.57 2.04 15.67 2.04 9.97C2.04 4.27 4.02 2.37 9.97 2.37Z"
+                stroke="#46A358"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
                 strokeLinejoin="round"
               />
             </svg>
-
             <p className="sm:text-[13px]">contact@greenshop.com</p>
           </div>
-          <div className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1">
+          <button
+            className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1"
+            onClick={handlePhoneCall}
+          >
             <svg
-              width="20"
-              height="20"
+              width="20.000000"
+              height="20.000000"
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
             >
-              <path
-                d="M11.9604 2.29175C15.0446 2.63425 17.4813 5.06758 17.8279 8.15175"
-                stroke="#46A358"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <defs />
+              <rect
+                id="Iconly/Curved/Calling"
+                width="20.000000"
+                height="20.000000"
+                fill="#FFFFFF"
+                fillOpacity="0"
               />
               <path
-                d="M11.9604 5.24426C13.4363 5.53093 14.5896 6.6851 14.8771 8.16093"
+                id="Stroke 1"
+                d="M11.96 2.29C15.04 2.63 17.48 5.06 17.82 8.15"
                 stroke="#46A358"
-                strokeWidth="1.5"
-                strokeLinecap="round"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
                 strokeLinejoin="round"
+                strokeLinecap="round"
               />
               <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.41715 13.5825C0.668834 7.83352 1.48623 5.20096 2.0922 4.35263C2.17005 4.21552 4.08881 1.34323 6.14557 3.02839C11.2508 7.23288 4.78767 6.63843 9.07458 10.9261C13.3624 15.2128 12.767 8.74996 16.9717 13.8541C18.6569 15.9117 15.7845 17.8303 15.6483 17.9073C14.7999 18.5141 12.1664 19.3315 6.41715 13.5825Z"
+                id="Stroke 3"
+                d="M11.96 5.24C13.43 5.53 14.58 6.68 14.87 8.16"
                 stroke="#46A358"
-                strokeWidth="1.5"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
+                strokeLinejoin="round"
                 strokeLinecap="round"
+              />
+              <path
+                id="Stroke 5"
+                d="M2.09 4.35C2.16 4.21 4.08 1.34 6.14 3.02C11.25 7.23 4.78 6.63 9.07 10.92C13.36 15.21 12.76 8.75 16.97 13.85C18.65 15.91 15.78 17.83 15.64 17.9C14.79 18.51 12.16 19.33 6.41 13.58C0.66 7.83 1.48 5.2 2.09 4.35Z"
+                stroke="#46A358"
+                strokeOpacity="1.000000"
+                strokeWidth="1.500000"
                 strokeLinejoin="round"
               />
             </svg>
             <p className="sm:text-[13px]">+88 01911 717 490</p>
-          </div>
+          </button>
         </div>
       </div>
-      <div className="flex justify-between gap-20 border-b border-[#46A35833] bg-[#FBFBFB] px-6 py-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:px-3 sm:py-4">
+      <div className="flex justify-between gap-20 border-b border-[#46A35833] bg-[#FBFBFB] px-6 py-8 sm:grid sm:grid-cols-2 sm:gap-8 sm:px-3 sm:py-4 md:grid md:grid-cols-2 md:gap-8 md:px-3 md:py-4">
         <div className="flex flex-col items-start gap-3 sm:gap-[6px]">
           <h4 className="text-[16px] font-bold sm:text-[16px] lg:text-[18px]">
             My Account
