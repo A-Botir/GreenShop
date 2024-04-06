@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "json-server src/db/data.json --port 1666 --watch & react-scripts start"
   },
   "dependencies": {
     "@mui/icons-material": "^5.15.13",
