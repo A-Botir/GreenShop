@@ -13,6 +13,7 @@ export const UseAllContext = createContext();
 
 const App = () => {
   const [hidden, setHidden] = useState(true);
+  const [isVisabilaty, setisVisabilaty] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [flowers, setFlowers] = useState([]);
   const [count, setCount] = useState(1);
@@ -21,6 +22,7 @@ const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [searchPlants, setSearchPlants] = useState([]);
   const inputField = useRef(null);
+  const [selectedValue, setSelectedValue] = useState("none");
 
   const handleInputChange = (event) => {
     const query = event.target.value;
@@ -131,6 +133,8 @@ const App = () => {
       value={{
         hidden,
         setHidden,
+        isVisabilaty,
+        setisVisabilaty,
         isVisible,
         setIsVisible,
         flowers,
@@ -148,6 +152,8 @@ const App = () => {
         inputValue,
         setInputValue,
         handleInputChange,
+        selectedValue,
+        setSelectedValue,
       }}
     >
       <div className="relative w-full">

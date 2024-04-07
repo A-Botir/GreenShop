@@ -108,4 +108,13 @@
   .card_btn:hover .hoverable {
     fill: #46a358;
   }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+    background-color: #ecfccb;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #458245;
+  }
 }

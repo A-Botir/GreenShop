@@ -7,8 +7,13 @@ import Cards from "../assets/images/photos/footer/cards.svg";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Payment = () => {
-  const { mapCart, setmapCart } = useContext(UseAllContext);
-  const [selectedValue, setSelectedValue] = useState("none");
+  const {
+    mapCart,
+    setmapCart,
+    setisVisabilaty,
+    selectedValue,
+    setSelectedValue,
+  } = useContext(UseAllContext);
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -17,18 +22,26 @@ const Payment = () => {
   const totalAmount =
     mapCart.reduce((total, item) => total + item.prices * item.counts, 0) - 16;
 
+  const handleCheckClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setisVisabilaty(false);
+  };
+
   return (
     <div className="col-span-3">
-      <h3 className="col-span-1 mb-5 text-[17px] font-bold">Your Order</h3>
+      <h3 className="mb-5 text-[17px] font-bold">Your Order</h3>
       <div>
         <table className="w-full border-separate border-spacing-y-[10px]">
           <thead>
             <tr className="bg-gray-200 border-b">
-              <th className="px-4 py-2 text-left text-[16px] font-medium">
+              <th className="border-b-[0.3px] border-[#46A35880] px-2 py-2 text-left text-[16px] font-medium">
                 Products
               </th>
-              <th className="px-5 py-2 text-left text-[16px] font-medium"></th>
-              <th className="px-10 py-2 text-left text-[16px] font-medium">
+              <th className="border-b-[0.3px] border-[#46A35880] px-5 py-2 text-left text-[16px] font-medium">
+                Qty
+              </th>
+              <th className="border-b-[0.3px] border-[#46A35880] px-10 py-2 text-left text-[16px] font-medium">
                 Subtotal
               </th>
             </tr>
@@ -36,7 +49,7 @@ const Payment = () => {
           <tbody>
             {mapCart.length === 0 ? (
               <tr className=" bg-grey">
-                <td className="flex max-h-[72px] items-center gap-3">
+                <td className="flex max-h-[72px] items-center gap-3 px-2 ">
                   <img
                     src="https://inde.io/uploads/491010faa0885af7d22bab1ca5c517c3.jpg"
                     alt="table img info"
@@ -60,7 +73,7 @@ const Payment = () => {
             ) : (
               mapCart.map((item, index) => (
                 <tr className=" bg-grey" key={item.id}>
-                  <td className="flex max-h-[72px] items-center gap-3">
+                  <td className="flex max-h-[72px] items-center gap-3 px-2 ">
                     <img
                       src={item.image}
                       alt="table img info"
@@ -128,11 +141,11 @@ const Payment = () => {
         >
           <label
             htmlFor="card"
-            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "first" ? "border-check" : "border-[#EAEAEA] "}`}
+            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "Payment by card" ? "border-check" : "border-[#EAEAEA] "}`}
             onClick={handleChange}
           >
             <FormControlLabel
-              value="first"
+              value="Payment by card"
               control={
                 <input type="radio" id="card" name="1" className="mr-2" />
               }
@@ -140,12 +153,12 @@ const Payment = () => {
             />
           </label>
           <label
-            htmlFor="card"
-            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "second" ? "border-check" : "border-[#EAEAEA] "}`}
+            htmlFor="bank"
+            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "Dorect bank transfer" ? "border-check" : "border-[#EAEAEA] "}`}
             onClick={handleChange}
           >
             <FormControlLabel
-              value="second"
+              value="Dorect bank transfer"
               control={
                 <input type="radio" id="bank" name="1" className="mr-2" />
               }
@@ -154,11 +167,11 @@ const Payment = () => {
           </label>
           <label
             htmlFor="cash"
-            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "third" ? "border-check" : "border-[#EAEAEA] "}`}
+            className={`mb-1 rounded-md border px-6 py-3 ${selectedValue == "Cash on delivery" ? "border-check" : "border-[#EAEAEA] "}`}
             onClick={handleChange}
           >
             <FormControlLabel
-              value="third"
+              value="Cash on delivery"
               control={
                 <input type="radio" id="cash" name="1" className="mr-2" />
               }
@@ -168,6 +181,7 @@ const Payment = () => {
         </RadioGroup>
         <Button
           variant="contained"
+          onClick={handleCheckClick}
           sx={{
             borderRadius: "3",
             backgroundColor: "#46A358",

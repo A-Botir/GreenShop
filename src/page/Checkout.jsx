@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+
 import Labels from "../components/Labels";
 import Payment from "../components/Payment";
+import Order from "../components/Order";
 
 const Checkout = () => {
   return (
@@ -20,6 +22,7 @@ const Checkout = () => {
         <Labels />
         <Payment />
       </form>
+      <Order />
     </section>
   );
 };

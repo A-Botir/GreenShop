@@ -28,6 +28,7 @@ const Header = () => {
     event.stopPropagation();
     setIsVisible(!isVisible);
   };
+  
   return (
     <header className=" fixed top-0 z-[80] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
       <div className="container border-b-[0.3px] border-[#46A35880] pt-3 sm:hidden">
