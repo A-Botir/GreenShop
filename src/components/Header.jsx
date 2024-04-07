@@ -7,10 +7,12 @@ import Logo from "../assets/images/icons/Logo.svg";
 
 const Header = () => {
   const location = useLocation();
-  const { isVisible, setIsVisible } = useContext(UseAllContext);
+  const { isVisible, setIsVisible, setHidden } = useContext(UseAllContext);
   const [cartItemCount, setCartItemCount] = useState(0);
 
-  const handleLoginClick = () => {
+  const handleLoginClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     setHidden(false);
   };
 
