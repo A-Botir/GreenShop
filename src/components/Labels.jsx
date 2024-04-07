@@ -70,7 +70,7 @@ const Labels = () => {
             />
           </label>
           <label className="text-[15px]">
-            State <span className="text-[22px] text-[#F03800]">*</span>
+            Street Address <span className="text-[22px] text-[#F03800]">*</span>
             <input
               type="text"
               className="mt-2 w-full border border-[#EAEAEA] p-3 outline-none"

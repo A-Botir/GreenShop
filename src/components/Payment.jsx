@@ -38,22 +38,22 @@ const Payment = () => {
       <h3 className="mb-5 text-[17px] font-bold">Your Order</h3>
       <div>
         <table className="w-full border-separate border-spacing-y-[10px]">
-          <thead>
-            <tr className="bg-gray-200 border-b">
-              <th className="border-b-[0.3px] border-[#46A35880] px-2 py-2 text-left text-[16px] font-medium">
+          <thead className="mb-4 block">
+            <tr className="flex w-full items-center justify-between border-b-[0.3px] border-[#46A35880]">
+              <th className="py-2 text-left text-[16px] font-medium">
                 Products
               </th>
-              <th className="border-b-[0.3px] border-[#46A35880] px-5 py-2 text-left text-[16px] font-medium">
-                Qty
-              </th>
-              <th className="border-b-[0.3px] border-[#46A35880] px-10 py-2 text-left text-[16px] font-medium">
-                Subtotal
-              </th>
+              <div className="flex w-[40%] items-center justify-between">
+                <th className="py-2 text-left text-[16px] font-medium">Qty</th>
+                <th className="pr-2 text-right text-[16px] font-medium ">
+                  Subtotal
+                </th>
+              </div>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tabscroll block h-[219px] max-h-[220px] w-full overflow-y-auto">
             {mapCart.length === 0 ? (
-              <tr className=" bg-grey">
+              <tr className=" flex items-center justify-between bg-grey">
                 <td className="flex max-h-[72px] items-center gap-3 px-2 ">
                   <img
                     src="https://inde.io/uploads/491010faa0885af7d22bab1ca5c517c3.jpg"
@@ -77,8 +77,11 @@ const Payment = () => {
               </tr>
             ) : (
               mapCart.map((item, index) => (
-                <tr className=" bg-grey" key={item.id}>
-                  <td className="flex max-h-[72px] items-center gap-3 px-2 ">
+                <tr
+                  className="mb-2 flex items-center justify-between bg-grey"
+                  key={item.id}
+                >
+                  <td className="flex max-h-[72px] items-center gap-3 ">
                     <img
                       src={item.image}
                       alt="table img info"
@@ -92,14 +95,14 @@ const Payment = () => {
                       </p>
                     </div>
                   </td>
-                  <td className="px-5 text-center">
-                    <p className=" text-oridinary">{`(x${item.counts})`}</p>
-                  </td>
-                  <td className="px-10 text-right">
-                    <p className="text-[18px] font-bold text-check">
+                  <div className="flex w-[40%] items-center justify-between">
+                    <th className="py-2 pl-2 text-left text-[16px] font-medium">
+                      {`(x${item.counts})`}
+                    </th>
+                    <th className="pr-2 text-right text-[16px] font-medium ">
                       ${item.prices * item.counts}.00
-                    </p>
-                  </td>
+                    </th>
+                  </div>
                 </tr>
               ))
             )}

@@ -23,6 +23,7 @@ const App = () => {
   const [searchPlants, setSearchPlants] = useState([]);
   const inputField = useRef(null);
   const [selectedValue, setSelectedValue] = useState("none");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleInputChange = (event) => {
     const query = event.target.value;
@@ -154,6 +155,8 @@ const App = () => {
         handleInputChange,
         selectedValue,
         setSelectedValue,
+        showPassword,
+        setShowPassword,
       }}
     >
       <div className="relative w-full">
