@@ -22,13 +22,17 @@ const Labels = () => {
           >
             <span className="text-[15px] text-check md:text-[14px]">Add</span>
           </Button>
-        ) : " "}
+        ) : (
+          " "
+        )}
       </div>
       {location.pathname === "/cabinat" ? (
         <p className="mb-8 text-oridinary">
           The following addresses will be used on the checkout page by default.
         </p>
-      ) : " "}
+      ) : (
+        " "
+      )}
       <div>
         <div className="mb-8 grid grid-cols-2 gap-x-5 gap-y-8">
           <label className="text-[15px]">
@@ -151,7 +155,9 @@ const Labels = () => {
               </label>
             </div>
           </>
-        ) : " "}
+        ) : (
+          " "
+        )}
       </div>
     </div>
   );

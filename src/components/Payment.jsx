@@ -22,10 +22,15 @@ const Payment = () => {
   const totalAmount =
     mapCart.reduce((total, item) => total + item.prices * item.counts, 0) - 16;
 
-  const handleCheckClick = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    setisVisabilaty(false);
+  const handleCheckClick = () => {
+    const form = document.getElementById("orderForm");
+    const isValid = form.checkValidity();
+
+    if (isValid) {
+      setisVisabilaty(false);
+    } else {
+      alert("Please fill out this form.");
+    }
   };
 
   return (
@@ -160,7 +165,13 @@ const Payment = () => {
             <FormControlLabel
               value="Dorect bank transfer"
               control={
-                <input type="radio" id="bank" name="1" className="mr-2" />
+                <input
+                  type="radio"
+                  id="bank"
+                  name="1"
+                  className="mr-2"
+                  required
+                />
               }
               label="Dorect bank transfer"
             />

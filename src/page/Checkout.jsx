@@ -18,7 +18,7 @@ const Checkout = () => {
         &nbsp;/&nbsp;
         <p className="text-[15px]"> Checkout</p>
       </div>
-      <form className="grid grid-cols-8 gap-[72px]">
+      <form className="grid grid-cols-8 gap-[72px]" id="orderForm">
         <Labels />
         <Payment />
       </form>
