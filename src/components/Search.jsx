@@ -32,16 +32,16 @@ const Search = () => {
     }
   };
 
-    const handleChangeSearch = (ev) => {
-      setInputValue(ev.target.value);
-    };
+  const handleChangeSearch = (ev) => {
+    setInputValue(ev.target.value);
+  };
 
   return (
     <div
       id="searchContainer"
       className={`fixed top-0 z-[89] ${
         isVisible ? "block" : "hidden"
-      } w-full bg-grey  sm:static sm:block sm:flex-grow sm:rounded-lg `}
+      } w-full bg-grey  sm:static  sm:hidden sm:flex-grow sm:rounded-lg`}
     >
       <div className="md:container lg:container">
         <form className="flex items-center gap-2 py-6 sm:px-3 sm:py-2">

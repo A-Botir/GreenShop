@@ -68,9 +68,9 @@ const PlantSlider = () => {
                     ${flower.price}.00
                   </p>
                 </div>
-                <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
+              <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToCart(flower)}
                   >
                     <svg
@@ -93,7 +93,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToWishlist(flower)}
                   >
                     <svg
@@ -111,7 +111,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <NavLink to={`/shop/${flower.id}`}>
-                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                    <button className=" card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:hidden sm:h-7 sm:rounded-[50%]">
                       <svg
                         width="20.000000"
                         height="20.000000"
@@ -156,7 +156,7 @@ const PlantSlider = () => {
                 </div>
                 <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToCart(flower)}
                   >
                     <svg
@@ -179,7 +179,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToWishlist(flower)}
                   >
                     <svg
@@ -197,7 +197,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <NavLink to={`/shop/${flower.id}`}>
-                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                    <button className=" card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:hidden sm:h-7 sm:rounded-[50%]">
                       <svg
                         width="20.000000"
                         height="20.000000"
@@ -240,9 +240,9 @@ const PlantSlider = () => {
                     ${flower.price}.00
                   </p>
                 </div>
-                <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
+              <div className="cardbtn_group absolute right-2 top-0 z-[20] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToCart(flower)}
                   >
                     <svg
@@ -265,7 +265,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                     onClick={() => addToWishlist(flower)}
                   >
                     <svg
@@ -283,7 +283,7 @@ const PlantSlider = () => {
                     </svg>
                   </button>
                   <NavLink to={`/shop/${flower.id}`}>
-                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                    <button className=" card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:hidden sm:h-7 sm:rounded-[50%]">
                       <svg
                         width="20.000000"
                         height="20.000000"

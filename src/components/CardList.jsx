@@ -75,7 +75,7 @@ const CardList = () => {
       </div>
       {value === "one" && (
         <>
-          <div className="mb-[60px] grid grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
+          <div className="mb-[60px] grid min-h-[1130px] grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
             {currentPage === 1 &&
               flowers.slice(0, 9).map((flower) => (
                 <div
@@ -90,7 +90,7 @@ const CardList = () => {
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -113,7 +113,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -131,7 +131,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -176,7 +176,7 @@ const CardList = () => {
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -199,7 +199,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -217,7 +217,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -262,7 +262,7 @@ const CardList = () => {
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -285,7 +285,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -303,7 +303,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -362,7 +362,7 @@ const CardList = () => {
       )}
       {value === "two" && (
         <>
-          <div className="mb-[60px] grid grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
+          <div className="grid min-h-[1130px] grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
             {currentPage === 1 &&
               flowers.slice(0, 9).map((flower) => (
                 <div
@@ -377,7 +377,7 @@ const CardList = () => {
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -400,7 +400,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -418,7 +418,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -463,7 +463,7 @@ const CardList = () => {
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -486,7 +486,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -504,7 +504,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -545,11 +545,11 @@ const CardList = () => {
                     <img
                       src={flower.online_img}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7 sm:rounded-[50%]"
                         onClick={() => addToCart(flower)}
                       >
                         <svg
@@ -572,7 +572,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <button
-                        className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                        className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:hidden"
                         onClick={() => addToWishlist(flower)}
                       >
                         <svg
@@ -590,7 +590,7 @@ const CardList = () => {
                         </svg>
                       </button>
                       <NavLink to={`shop/${flower.id}`}>
-                        <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                        <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] sm:h-7 sm:w-7 sm:rounded-[50%]">
                           <svg
                             width="20.000000"
                             height="20.000000"
@@ -622,7 +622,7 @@ const CardList = () => {
                 </div>
               ))}
           </div>
-          <div className="flex justify-end sm:justify-center">
+          <div className="mt-[60px] flex justify-end sm:justify-center">
             <Pagination
               count={totalPages}
               page={currentPage}
@@ -649,7 +649,7 @@ const CardList = () => {
       )}
       {value === "three" && (
         <>
-          <div className="mb-[60px] grid grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
+          <div className="mb-[60px] grid min-h-[1130px] grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
             {currentPage === 1 &&
               flowers
                 .filter((flower) => flower.sale === true)

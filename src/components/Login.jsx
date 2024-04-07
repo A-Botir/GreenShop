@@ -9,7 +9,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = (event) => {
-    event.preventDefault();
     const userData = JSON.parse(localStorage.getItem(email));
     if (userData && userData.password === password) {
       localStorage.setItem("activeLogin", JSON.stringify(userData));

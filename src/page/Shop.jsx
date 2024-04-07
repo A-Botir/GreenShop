@@ -12,7 +12,14 @@ const Shop = () => {
   }
 
   return (
-    <div className="pt-32">
+    <div className="pt-9">
+      <div className="mb-9 flex items-center sm:hidden">
+        <NavLink to="/">
+          <p className="text-[15px] font-bold">Home</p>
+        </NavLink>
+        &nbsp;/&nbsp;
+        <p className="text-[15px]">Shop</p>
+      </div>
       <div className="grid grid-cols-5 gap-6 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-5">
         {searchPlants.map((plant) => (
           <div className="card_item relative" key={plant.id}>

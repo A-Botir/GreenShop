@@ -29,7 +29,7 @@ const Wishlist = () => {
                 className="object-contain"
               />
               <div className="cardbtn_group absolute right-2 top-2 z-[13] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
-                <button className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7">
+                <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7">
                   <svg
                     width="20.000000"
                     height="19.000000"
@@ -49,7 +49,7 @@ const Wishlist = () => {
                     />
                   </svg>
                 </button>
-                <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:hidden sm:h-7 sm:rounded-[50%]">
                   <svg
                     width="20.000000"
                     height="20.000000"
@@ -69,7 +69,10 @@ const Wishlist = () => {
                     />
                   </svg>
                 </button>
-                <IconButton aria-label="delete">
+                <IconButton
+                  aria-label="delete"
+                  sx={{ padding: "3px", borderRadius: "50%" }}
+                >
                   <svg
                     width="24.000000"
                     height="24.000000"
@@ -142,7 +145,7 @@ const Wishlist = () => {
                 />
                 <div className="cardbtn_group absolute right-2 top-2 z-[13] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                   <button
-                    className="card_btn flex h-9 w-9 items-center justify-center sm:h-7 sm:w-7"
+                    className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7"
                     onClick={() => addToCart(item)}
                   >
                     <svg
@@ -165,7 +168,7 @@ const Wishlist = () => {
                     </svg>
                   </button>
                   <NavLink to={`/shop/${item.id}`}>
-                    <button className="card_btn flex h-9 w-9 items-center justify-center sm:hidden sm:h-7">
+                    <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:hidden sm:h-7 sm:rounded-[50%]">
                       <svg
                         width="20.000000"
                         height="20.000000"
@@ -188,6 +191,7 @@ const Wishlist = () => {
                   </NavLink>
                   <IconButton
                     aria-label="delete"
+                    sx={{ padding: "3px", borderRadius: "50%" }}
                     onClick={() => deleteWish(item.id)}
                   >
                     <svg
