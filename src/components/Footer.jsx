@@ -138,7 +138,7 @@ const Footer = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="sm:text-[13px]">
+            <p className="cursor-pointer  transition-all duration-500 ease-in-out hover:text-check sm:text-[13px]">
               70 West Buckingham Ave. Farmingdale, NY 11735
             </p>
           </div>
@@ -177,7 +177,9 @@ const Footer = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="sm:text-[13px]">contact@greenshop.com</p>
+            <p className="cursor-pointer  transition-all duration-500 ease-in-out hover:text-check sm:text-[13px]">
+              contact@greenshop.com
+            </p>
           </div>
           <button
             className="col-span-2 flex items-center gap-2 sm:col-span-1 sm:justify-center sm:gap-1"
@@ -226,7 +228,9 @@ const Footer = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="sm:text-[13px]">+88 01911 717 490</p>
+            <p className="cursor-pointer  transition-all duration-500 ease-in-out hover:text-check sm:text-[13px]">
+              +88 01911 717 490
+            </p>
           </button>
         </div>
       </div>
@@ -236,11 +240,21 @@ const Footer = () => {
             My Account
           </h4>
           <ul className="flex flex-col gap-3 sm:gap-[6px]">
-            <li>My Account</li>
-            <li>Our stores</li>
-            <li>Contact us</li>
-            <li>Career</li>
-            <li>Specials</li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              My Account
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Our stores
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Contact us
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Career
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Specials
+            </li>
           </ul>
         </div>
         <div className="flex flex-col items-start gap-3 sm:gap-[6px]">
@@ -248,11 +262,22 @@ const Footer = () => {
             Help & Guide
           </h4>
           <ul className="flex flex-col gap-3 sm:gap-[6px]">
-            <li>Help Center</li>
-            <li>How to Buy</li>
-            <li>Shipping & Delivery</li>
-            <li> Product Policy </li>
-            <li>How to Return</li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Help Center
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              How to Buy
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Shipping & Delivery
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              {" "}
+              Product Policy{" "}
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              How to Return
+            </li>
           </ul>
         </div>
         <div className="flex flex-col items-start gap-3 sm:gap-[6px]">
@@ -260,11 +285,21 @@ const Footer = () => {
             Categories
           </h4>
           <ul className="flex flex-col gap-3 sm:gap-[6px]">
-            <li>House Plants</li>
-            <li>Potter Plants</li>
-            <li>Seeds </li>
-            <li>Small Plants</li>
-            <li>Accessories</li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              House Plants
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Potter Plants
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Seeds{" "}
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Small Plants
+            </li>
+            <li className="transition-all  duration-500 ease-in-out hover:font-medium hover:text-check  sm:text-[13px]">
+              Accessories
+            </li>
           </ul>
         </div>
         <div className="flex flex-col items-start gap-3 sm:gap-[6px]">

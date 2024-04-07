@@ -13,6 +13,9 @@ export default {
         },
         center: true,
       },
+      transitionTimingFunction: {
+        easy: "ease", 
+      },
     },
     colors: {
       oridinary: "#727272",
