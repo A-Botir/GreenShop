@@ -7,7 +7,7 @@ import Logo from "../assets/images/icons/Logo.svg";
 
 const Header = () => {
   const location = useLocation();
-  const { setHidden } = useContext(UseAllContext);
+  const { isVisible, setIsVisible } = useContext(UseAllContext);
   const [cartItemCount, setCartItemCount] = useState(0);
 
   const handleLoginClick = () => {
@@ -19,8 +19,13 @@ const Header = () => {
     const count = cartItems.length;
     setCartItemCount(count);
   }, []);
-  // ишламди, рендер боса ишлавоти
+  // ишламади, ререндер боса ишлавоти
 
+  const toggleSearch = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setIsVisible(!isVisible);
+  };
   return (
     <header className=" fixed top-0 z-[80] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
       <div className="container border-b-[0.3px] border-[#46A35880] pt-3 sm:hidden">
@@ -102,7 +107,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-6">
-            <IconButton aria-label="search">
+            <IconButton aria-label="search" onClick={toggleSearch}>
               <svg
                 width="20"
                 height="20"

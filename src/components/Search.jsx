@@ -1,8 +1,48 @@
-import React from "react";
+import { useContext, useEffect } from "react";
+import { UseAllContext } from "../App";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const {
+    isVisible,
+    setIsVisible,
+    handleInputChange,
+    inputField,
+    inputValue,
+    setInputValue,
+  } = useContext(UseAllContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const searchContainer = document.getElementById("searchContainer");
+      if (searchContainer && !searchContainer.contains(event.target)) {
+        setIsVisible(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const handleKeyDown = (ev) => {
+    if (ev.key === "Enter") {
+      navigate(`/shop?query=${inputValue}`);
+    }
+  };
+
+    const handleChangeSearch = (ev) => {
+      setInputValue(ev.target.value);
+    };
+
   return (
-    <div className="fixed top-0 z-[89] hidden w-full bg-grey sm:static sm:block sm:flex-grow sm:rounded-lg">
+    <div
+      id="searchContainer"
+      className={`fixed top-0 z-[89] ${
+        isVisible ? "block" : "hidden"
+      } w-full bg-grey  sm:static sm:block sm:flex-grow sm:rounded-lg `}
+    >
       <div className="md:container lg:container">
         <form className="flex items-center gap-2 py-6 sm:px-3 sm:py-2">
           <div className="flex w-full items-center gap-2">
@@ -22,6 +62,9 @@ const Search = () => {
               type="search"
               className="flex-grow border-none bg-grey px-3 py-[10px] outline-none sm:px-2 sm:py-1"
               placeholder="Search..."
+              onChange={handleChangeSearch}
+              ref={inputField}
+              onKeyDown={handleKeyDown}
             />
           </div>
           <button className=" rounded-lg bg-check px-3 py-3 font-bold text-[#fff] sm:hidden">

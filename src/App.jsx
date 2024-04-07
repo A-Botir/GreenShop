@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { Home, Shop, ShopCart, Checkout, Cabinet, SinglePage } from "./page";
 import axios from "axios";
 
@@ -7,15 +7,45 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MobHeader from "./components/MobHeader";
 import Authorization from "./components/Authorization";
+import Search from "./components/Search";
 
 export const UseAllContext = createContext();
 
 const App = () => {
   const [hidden, setHidden] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [flowers, setFlowers] = useState([]);
   const [count, setCount] = useState(1);
   const [mapCart, setmapCart] = useState([]);
   const [mapItem, setmapItem] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [searchPlants, setSearchPlants] = useState([]);
+  const inputField = useRef(null);
+
+  const handleInputChange = (event) => {
+    const query = event.target.value;
+    setInputValue(query);
+    handleSearch(query);
+  };
+
+  const handleSearch = async (query) => {
+    try {
+      const response = await axios.get("http://localhost:1666/flowers", {
+        params: {
+          query: inputValue,
+        },
+      });
+      if (response.status !== 200)
+        throw new Error("Could not get results movie list");
+      setSearchPlants(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    handleSearch();
+  }, [inputValue]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -102,6 +132,8 @@ const App = () => {
       value={{
         hidden,
         setHidden,
+        isVisible,
+        setIsVisible,
         flowers,
         decrement,
         increment,
@@ -112,18 +144,26 @@ const App = () => {
         addToWishlist,
         mapItem,
         setmapItem,
+        searchPlants,
+        inputField,
+        inputValue,
+        setInputValue,
+        handleInputChange,
       }}
     >
-      <div className="relative w-full bg-[#FFFFFF]">
+      <div className="relative w-full">
         <Authorization />
         <div className="h-[75px]  w-full sm:hidden"></div>
         <Header />
-
+        <Search />
         <div className="container">
           <MobHeader />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route
+              path="/shop"
+              element={<Shop searchPlants={searchPlants} />}
+            />
             <Route path="/shop/:id" element={<SinglePage />} />
             <Route path="/shop/checkout" element={<Checkout />} />
             <Route path="/shop/shopcart" element={<ShopCart />} />
