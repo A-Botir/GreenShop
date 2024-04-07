@@ -5,7 +5,7 @@ import PlantSlider from "../components/PlantSlider";
 import { NavLink } from "react-router-dom";
 
 const Shop = () => {
-  const { searchPlants } = useContext(UseAllContext);
+  const { searchPlants, addToCart, addToWishlist } = useContext(UseAllContext);
 
   if (!searchPlants || searchPlants.length === 0) {
     return <div>Loading...</div>;

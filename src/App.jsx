@@ -121,7 +121,6 @@ const App = () => {
     if (existingIndex === -1) {
       wishlistItems.push(wishFlower);
       localStorage.setItem("wishFlower", JSON.stringify(wishlistItems));
-      alert("Added to wishlist successfully!");
     } else {
       alert("Item is already in the wishlist!");
     }
