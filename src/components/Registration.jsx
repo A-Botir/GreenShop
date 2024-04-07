@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useContext, useState } from "react";
 import { UseAllContext } from "../App";
 
-const Registration = (setStep) => {
+const Registration = () => {
   const { showPassword, setShowPassword } = useContext(UseAllContext);
   const [userNameInput, setUserNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -21,14 +21,13 @@ const Registration = (setStep) => {
       email: emailInput,
       password: passwordInput,
     };
-    localStorage.setItem(userNameInput, JSON.stringify(userData));
+    localStorage.setItem(emailInput, JSON.stringify(userData));
 
     setUserNameInput("");
     setEmailInput("");
     setPasswordInput("");
     setConfirmPasswordInput("");
     alert("Registration successful!");
-    setStep(1);
   };
 
   return (
@@ -54,7 +53,7 @@ const Registration = (setStep) => {
       />
       <div className="mb-[14px] flex items-center justify-between gap-3 rounded-[5px] border border-[#EAEAEA] px-[14px] py-[10px] hover:border-check">
         <input
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "password" : "text"}
           minLength="8"
           className="flex-grow tracking-[1px] outline-none"
           required
@@ -183,7 +182,7 @@ const Registration = (setStep) => {
       </div>
       <div className="mb-8 flex items-center justify-between gap-3 rounded-[5px] border border-[#EAEAEA] px-[14px] py-[10px] hover:border-check">
         <input
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "password" : "text"}
           minLength="8"
           required
           value={confirmPasswordInput}

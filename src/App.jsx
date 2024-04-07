@@ -23,7 +23,7 @@ const App = () => {
   const [searchPlants, setSearchPlants] = useState([]);
   const inputField = useRef(null);
   const [selectedValue, setSelectedValue] = useState("none");
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
 
   const handleInputChange = (event) => {
     const query = event.target.value;

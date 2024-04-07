@@ -2,12 +2,25 @@ import React, { useState } from "react";
 import Address from "../components/Address";
 import Account from "../components/Account";
 import Wishlist from "../components/Wishlist";
+import { NavLink } from "react-router-dom";
 
 const Сabinet = () => {
   const [step, setStep] = useState(3);
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
+  };
+
+  const handleLogout = () => {
+    const activeLogin = localStorage.getItem("activeLogin");
+    if (activeLogin === "none") {
+      alert("User is not logged in!");
+      window.location.href = "/cabinat";
+    } else {
+      localStorage.setItem("activeLogin", "none");
+      alert("User is logout!");
+      window.location.href = "/";
+    }
   };
 
   return (
@@ -239,40 +252,42 @@ const Сabinet = () => {
               </li>
             </ul>
           </nav>
-          <button className="w-full border-l-4 border-t-[0.3px] border-l-grey border-t-[#a9eeb780] px-[18px] py-[19px] hover:border-l-check hover:bg-[#fff]">
-            <p className="flex items-center gap-2 text-[15px] font-bold leading-[15px] text-check">
-              <svg
-                width="18.000000"
-                height="18.000000"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-              >
-                <defs>
-                  <clipPath id="clip9_1443">
-                    <rect
-                      id="User"
-                      width="18.000000"
-                      height="18.000000"
-                      fill="white"
-                      fillOpacity="0"
+          <NavLink to="/" onClick={handleLogout}>
+            <div className="w-full border-l-4 border-t-[0.3px] border-l-grey border-t-[#a9eeb780] px-[18px] py-[19px] hover:border-l-check hover:bg-[#fff]">
+              <p className="flex items-center gap-2 text-[15px] font-bold leading-[15px] text-check">
+                <svg
+                  width="18.000000"
+                  height="18.000000"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <clipPath id="clip9_1443">
+                      <rect
+                        id="User"
+                        width="18.000000"
+                        height="18.000000"
+                        fill="white"
+                        fillOpacity="0"
+                      />
+                    </clipPath>
+                  </defs>
+                  <g clipPath="url(#clip9_1443)">
+                    <path
+                      id="Vector"
+                      d="M9 1.5C6.96 1.5 5.32 3.13 5.32 5.15C5.32 7.17 6.96 8.8 9 8.8C11.03 8.8 12.67 7.17 12.67 5.15C12.67 3.13 11.03 1.5 9 1.5ZM6.48 5.15C6.48 3.77 7.61 2.65 9 2.65C10.38 2.65 11.51 3.77 11.51 5.15C11.51 6.53 10.38 7.65 9 7.65C7.61 7.65 6.48 6.53 6.48 5.15ZM7.09 10.34C4.83 10.34 3 12.16 3 14.41C3 14.83 3.15 15.37 3.67 15.65C4.36 16.02 5.85 16.5 9 16.5C12.14 16.5 13.63 16.02 14.32 15.65C14.84 15.37 15 14.83 15 14.41C15 12.16 13.16 10.34 10.9 10.34L7.09 10.34ZM4.16 14.41C4.16 12.8 5.47 11.5 7.09 11.5L10.9 11.5C12.52 11.5 13.83 12.8 13.83 14.41C13.83 14.5 13.82 14.56 13.8 14.59C13.79 14.62 13.78 14.63 13.77 14.64C13.32 14.88 12.05 15.34 9 15.34C5.94 15.34 4.67 14.88 4.22 14.64C4.21 14.63 4.2 14.62 4.19 14.59C4.17 14.56 4.16 14.5 4.16 14.41Z"
+                      fill="#46A358"
+                      fillOpacity="1.000000"
+                      fillRule="evenodd"
                     />
-                  </clipPath>
-                </defs>
-                <g clipPath="url(#clip9_1443)">
-                  <path
-                    id="Vector"
-                    d="M9 1.5C6.96 1.5 5.32 3.13 5.32 5.15C5.32 7.17 6.96 8.8 9 8.8C11.03 8.8 12.67 7.17 12.67 5.15C12.67 3.13 11.03 1.5 9 1.5ZM6.48 5.15C6.48 3.77 7.61 2.65 9 2.65C10.38 2.65 11.51 3.77 11.51 5.15C11.51 6.53 10.38 7.65 9 7.65C7.61 7.65 6.48 6.53 6.48 5.15ZM7.09 10.34C4.83 10.34 3 12.16 3 14.41C3 14.83 3.15 15.37 3.67 15.65C4.36 16.02 5.85 16.5 9 16.5C12.14 16.5 13.63 16.02 14.32 15.65C14.84 15.37 15 14.83 15 14.41C15 12.16 13.16 10.34 10.9 10.34L7.09 10.34ZM4.16 14.41C4.16 12.8 5.47 11.5 7.09 11.5L10.9 11.5C12.52 11.5 13.83 12.8 13.83 14.41C13.83 14.5 13.82 14.56 13.8 14.59C13.79 14.62 13.78 14.63 13.77 14.64C13.32 14.88 12.05 15.34 9 15.34C5.94 15.34 4.67 14.88 4.22 14.64C4.21 14.63 4.2 14.62 4.19 14.59C4.17 14.56 4.16 14.5 4.16 14.41Z"
-                    fill="#46A358"
-                    fillOpacity="1.000000"
-                    fillRule="evenodd"
-                  />
-                </g>
-              </svg>
-              Loguot
-            </p>
-          </button>
+                  </g>
+                </svg>
+                Loguot
+              </p>
+            </div>
+          </NavLink>
         </div>
       </div>
       <div className="col-span-8">

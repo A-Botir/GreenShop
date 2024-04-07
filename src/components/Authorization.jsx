@@ -48,7 +48,7 @@ const Authorization = () => {
                 </ul>
               </nav>
               {step === 1 && <Login />}
-              {step === 2 && <Registration setStep={setStep} />}
+              {step === 2 && <Registration />}
               <fieldset className="mb-6 mt-4 border-t border-[#EAEAEA]">
                 <legend align="center" className="px-2 text-[13px]">
                   {step === 1 && <>Or login with</>}

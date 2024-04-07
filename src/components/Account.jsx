@@ -152,7 +152,7 @@ const Account = () => {
             Current password
             <div className="mt-2 flex justify-between gap-3 border border-[#EAEAEA] p-3">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? "password" : "text"}
                 minLength="8"
                 className=" w-full tracking-[1px]   outline-none"
                 required
@@ -282,7 +282,7 @@ const Account = () => {
             New password
             <div className="mt-2 flex justify-between gap-3 border border-[#EAEAEA] p-3">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? "password" : "text"}
                 minLength="8"
                 className=" w-full tracking-[1px]   outline-none"
                 required
@@ -412,7 +412,7 @@ const Account = () => {
             Confirm new password
             <div className="mt-2 flex justify-between gap-3 border border-[#EAEAEA] p-3">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? "password" : "text"}
                 minLength="8"
                 className=" w-full tracking-[1px]   outline-none"
                 required

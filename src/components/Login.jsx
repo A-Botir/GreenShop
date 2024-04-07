@@ -3,10 +3,25 @@ import { useContext, useState } from "react";
 import { UseAllContext } from "../App";
 
 const Login = () => {
-  const { showPassword, setShowPassword } = useContext(UseAllContext);
+  const { showPassword, setShowPassword, setHidden, hidden } =
+    useContext(UseAllContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const userData = JSON.parse(localStorage.getItem(email));
+    if (userData && userData.password === password) {
+      localStorage.setItem("activeLogin", JSON.stringify(userData));
+      alert("Login successful!");
+      setHidden(!hidden);
+    } else {
+      alert("Invalid email or password");
+    }
+  };
 
   return (
-    <form className="mb-4 mt-3">
+    <form className="mb-4 mt-3" onSubmit={handleLogin}>
       <p className="mb-[14px] text-[13px]">
         Enter your username and password to login.
       </p>
@@ -14,14 +29,18 @@ const Login = () => {
         type="email"
         placeholder="almamun_uxui@outlook.com"
         required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         className="mb-[14px] w-full rounded-[5px] border border-[#EAEAEA] px-[14px] py-3 outline-none hover:border-check"
       />
       <div className="mb-[14px] flex items-center justify-between gap-3 rounded-[5px] border border-[#EAEAEA] px-[14px] py-[10px] hover:border-check">
         <input
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "password" : "text"}
           minLength="8"
-          className="flex-grow  tracking-[1px] outline-none"
+          value={password}
           required
+          onChange={(e) => setPassword(e.target.value)}
+          className="flex-grow  tracking-[1px] outline-none"
           placeholder="Password"
         />
         <button
@@ -128,7 +147,7 @@ const Login = () => {
               </g>
             </svg>
           ) : (
-                <svg
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               id="Outline"
               viewBox="0 0 24 24"
@@ -145,6 +164,7 @@ const Login = () => {
       </div>
       <p className="mb-6 text-right text-check">Forgot Password?</p>
       <Button
+        type="submit"
         variant="contained"
         color="success"
         sx={{

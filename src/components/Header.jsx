@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { IconButton, Button } from "@mui/material";
+import { IconButton, Button, Avatar, Tooltip } from "@mui/material";
 import { UseAllContext } from "../App";
 
 import Logo from "../assets/images/icons/Logo.svg";
@@ -9,6 +9,10 @@ const Header = () => {
   const location = useLocation();
   const { isVisible, setIsVisible, setHidden } = useContext(UseAllContext);
   const [cartItemCount, setCartItemCount] = useState(0);
+  const [activeLogout, setActiveLogout] = useState(
+    !localStorage.getItem("activeLogin") ||
+      localStorage.getItem("activeLogin") === "none",
+  );
 
   const handleLoginClick = (event) => {
     event.preventDefault();
@@ -28,7 +32,16 @@ const Header = () => {
     event.stopPropagation();
     setIsVisible(!isVisible);
   };
-  
+
+  const activeLoginString = localStorage.getItem("activeLogin");
+  let activeLogin;
+
+  if (activeLoginString && activeLoginString !== "none") {
+    activeLogin = JSON.parse(activeLoginString);
+  } else {
+    activeLogin = { username: "Username" };
+  }
+
   return (
     <header className=" fixed top-0 z-[80] w-full bg-[#fff] sm:bottom-0 sm:top-auto sm:border-none">
       <div className="container border-b-[0.3px] border-[#46A35880] pt-3 sm:hidden">
@@ -93,15 +106,14 @@ const Header = () => {
               </li>
               <li
                 className={`border-b-[3px] hover:font-bold lg:text-[16px] ${
-                  location.pathname === "/cabinat"
+                  location.pathname === "/blog"
                     ? " border-[#46A358] font-bold"
                     : "border-[#fff]"
                 }`}
               >
-                {" "}
-                <NavLink to="/cabinat">
+                <NavLink to="/blog">
                   <p
-                    className={`${location.pathname === "/cabinat" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
+                    className={`${location.pathname === "/blog" ? "font-bold" : ""} py-[22px] md:py-[16px]`}
                   >
                     Blogs
                   </p>
@@ -110,88 +122,108 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-6">
-            <IconButton aria-label="search" onClick={toggleSearch}>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z"
-                  fill="#3D3D3D"
-                />
-              </svg>
-            </IconButton>
-            <NavLink to="/shop/shopcart">
-              <IconButton aria-label="shop">
-                <div className="relative">
+            <Tooltip title="Search">
+              <IconButton aria-label="search" onClick={toggleSearch}>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z"
+                    fill="#3D3D3D"
+                  />
+                </svg>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="shopcart">
+              <NavLink to="/shop/shopcart">
+                <IconButton aria-label="shop">
+                  <div className="relative">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.1567 20.25H9.89163C6.79003 20.25 4.26667 17.7267 4.26667 14.6251V8.85947C4.26667 5.9762 2.82958 3.30739 0.422521 1.72031C-0.00975775 1.43531 -0.129101 0.853876 0.155897 0.421598C0.440896 -0.0107278 1.02228 -0.130118 1.45465 0.154974C2.82874 1.06097 3.94351 2.2559 4.74067 3.63167C4.91293 3.82466 6.30202 5.29699 8.57919 5.29699H19.3748C22.3201 5.24191 24.6254 8.19769 23.8554 11.0406L22.6126 15.9939C21.9839 18.4998 19.7404 20.25 17.1567 20.25ZM5.90513 6.64234C6.06099 7.36238 6.14166 8.10483 6.14166 8.85947V14.6251C6.14166 16.6928 7.8239 18.375 9.89163 18.375H17.1567C18.8792 18.375 20.3748 17.2082 20.794 15.5376L22.0367 10.5844C22.4943 8.89509 21.1243 7.13931 19.3748 7.17198H8.57914C7.54926 7.17198 6.65283 6.94993 5.90513 6.64234ZM9.42289 22.8281C9.42289 22.1809 8.89822 21.6563 8.25102 21.6563C6.69609 21.7182 6.69745 23.9387 8.25102 24C8.89822 24 9.42289 23.4753 9.42289 22.8281ZM18.751 22.8281C18.751 22.1809 18.2263 21.6563 17.5791 21.6563C16.0242 21.7182 16.0255 23.9387 17.5791 24C18.2263 24 18.751 23.4753 18.751 22.8281ZM20.3123 9.98446C20.3123 9.46668 19.8925 9.04697 19.3748 9.04697H8.95414C7.71027 9.09647 7.71121 10.8729 8.95414 10.922H19.3748C19.8925 10.922 20.3123 10.5022 20.3123 9.98446Z"
+                        fill="#3D3D3D"
+                      />
+                    </svg>
+                    <span className="absolute right-[-6px] top-0 flex h-4 w-4 items-center justify-center rounded-[50%] border border-[white] bg-[#46A358] text-[9px] text-[white]">
+                      {cartItemCount}
+                    </span>
+                  </div>
+                </IconButton>
+              </NavLink>
+            </Tooltip>
+            {activeLogout ? (
+              <Tooltip title="Login">
+                <Button
+                  variant="contained"
+                  onClick={handleLoginClick}
+                  sx={{
+                    backgroundColor: "#46A358",
+                    color: "white",
+                    fontWeight: "700",
+                    fontFamily: "Cera Pro",
+                    paddingX: "16px",
+                    "&:hover": {
+                      backgroundColor: "#46A358",
+                    },
+                  }}
+                >
                   <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M17.1567 20.25H9.89163C6.79003 20.25 4.26667 17.7267 4.26667 14.6251V8.85947C4.26667 5.9762 2.82958 3.30739 0.422521 1.72031C-0.00975775 1.43531 -0.129101 0.853876 0.155897 0.421598C0.440896 -0.0107278 1.02228 -0.130118 1.45465 0.154974C2.82874 1.06097 3.94351 2.2559 4.74067 3.63167C4.91293 3.82466 6.30202 5.29699 8.57919 5.29699H19.3748C22.3201 5.24191 24.6254 8.19769 23.8554 11.0406L22.6126 15.9939C21.9839 18.4998 19.7404 20.25 17.1567 20.25ZM5.90513 6.64234C6.06099 7.36238 6.14166 8.10483 6.14166 8.85947V14.6251C6.14166 16.6928 7.8239 18.375 9.89163 18.375H17.1567C18.8792 18.375 20.3748 17.2082 20.794 15.5376L22.0367 10.5844C22.4943 8.89509 21.1243 7.13931 19.3748 7.17198H8.57914C7.54926 7.17198 6.65283 6.94993 5.90513 6.64234ZM9.42289 22.8281C9.42289 22.1809 8.89822 21.6563 8.25102 21.6563C6.69609 21.7182 6.69745 23.9387 8.25102 24C8.89822 24 9.42289 23.4753 9.42289 22.8281ZM18.751 22.8281C18.751 22.1809 18.2263 21.6563 17.5791 21.6563C16.0242 21.7182 16.0255 23.9387 17.5791 24C18.2263 24 18.751 23.4753 18.751 22.8281ZM20.3123 9.98446C20.3123 9.46668 19.8925 9.04697 19.3748 9.04697H8.95414C7.71027 9.09647 7.71121 10.8729 8.95414 10.922H19.3748C19.8925 10.922 20.3123 10.5022 20.3123 9.98446Z"
-                      fill="#3D3D3D"
+                      d="M17.1601 9.10057H7.12598"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M14.7212 6.67059L17.1612 9.10059L14.7212 11.5306"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M12.6342 5.35823C12.3592 2.3749 11.2425 1.29156 6.80082 1.29156C0.883322 1.29156 0.883322 3.21656 0.883322 8.9999C0.883322 14.7832 0.883322 16.7082 6.80082 16.7082C11.2425 16.7082 12.3592 15.6249 12.6342 12.6416"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="absolute right-[-6px] top-0 flex h-4 w-4 items-center justify-center rounded-[50%] border border-[white] bg-[#46A358] text-[9px] text-[white]">
-                    {cartItemCount}
+                  <span className="ml-1 text-[16px] font-medium text-[#fff] md:text-[14px]">
+                    Login
                   </span>
-                </div>
-              </IconButton>
-            </NavLink>
-            <Button
-              variant="contained"
-              onClick={handleLoginClick}
-              sx={{
-                backgroundColor: "#46A358",
-                color: "white",
-                fontWeight: "700",
-                fontFamily: "Cera Pro",
-                paddingX: "16px",
-                "&:hover": {
-                  backgroundColor: "#46A358",
-                },
-              }}
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.1601 9.10057H7.12598"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14.7212 6.67059L17.1612 9.10059L14.7212 11.5306"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.6342 5.35823C12.3592 2.3749 11.2425 1.29156 6.80082 1.29156C0.883322 1.29156 0.883322 3.21656 0.883322 8.9999C0.883322 14.7832 0.883322 16.7082 6.80082 16.7082C11.2425 16.7082 12.3592 15.6249 12.6342 12.6416"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="ml-1 text-[16px] font-medium text-[#fff] md:text-[14px]">
-                Login
-              </span>
-            </Button>
+                </Button>
+              </Tooltip>
+            ) : (
+              <Tooltip title="Greenshop account">
+                <NavLink to="/cabinat">
+                  <div className="rounded-[50%] bg-[lightblue] p-1">
+                    <Avatar
+                      alt={activeLogin.username}
+                      sx={{ background: "#46A358" }}
+                      src="https://lh3.googleusercontent.com/ogw/AF2bZyhw2sA6dpEA0lWvGVpdtZsrlTimuGt6VtmUVARv=s32-c-mo"
+                    />
+                  </div>
+                </NavLink>
+              </Tooltip>
+            )}
           </div>
         </div>
       </div>
