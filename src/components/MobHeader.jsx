@@ -1,13 +1,23 @@
 import React from "react";
 import Search from "./Search";
+import { useContext } from "react";
+import { UseAllContext } from "../App";
 
 const MobHeader = () => {
+  const { showSideBar, setshowSideBar } = useContext(UseAllContext);
+
+  const IsshowSideBar = () => {
+    setshowSideBar(!showSideBar);
+  };
   return (
     <div className="w-full bg-[white] pb-[6px] sm:fixed sm:top-0 sm:z-[95] sm:pt-[10px]">
-      <div className="container mx-auto sm:flex sm:items-center sm:gap-2">
+      <div className="sm:container mx-auto sm:flex sm:items-center sm:gap-2">
         <Search />
         <div className="hidden sm:block">
-          <button className="shadow-smbtn hidden rounded-lg bg-check p-2 sm:block">
+          <button
+            className="hidden rounded-lg bg-check p-2 shadow-smbtn sm:block"
+            onClick={IsshowSideBar}
+          >
             <svg
               width="22.000000"
               height="22.000000"

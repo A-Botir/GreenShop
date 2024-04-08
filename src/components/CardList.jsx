@@ -82,11 +82,12 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                    {" "}
                     <img
                       src={flower.card_img}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -168,11 +169,11 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="sm:min-[199px] relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
                     <img
                       src={flower.image_url}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -254,11 +255,12 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                    {" "}
                     <img
                       src={flower.image_url}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -369,11 +371,12 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                    {" "}
                     <img
                       src={flower.online_img}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -455,11 +458,12 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                    {" "}
                     <img
                       src={flower.online_img}
                       alt="card img"
-                      className="max-h-full max-w-full object-cover"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -541,11 +545,12 @@ const CardList = () => {
                   className="card_item transition duration-500"
                   key={flower.id}
                 >
-                  <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                    {" "}
                     <img
                       src={flower.online_img}
                       alt="card img"
-                      className="max-h-full max-w-full object-fill"
+                      className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                     />
                     <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                       <button
@@ -659,11 +664,12 @@ const CardList = () => {
                     className="card_item transition duration-500"
                     key={flower.id}
                   >
-                    <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                    <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                      {" "}
                       <img
                         src={flower.online_img}
                         alt="card img"
-                        className="max-h-full max-w-full object-cover"
+                        className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                       />
                       <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                         <button
@@ -752,11 +758,12 @@ const CardList = () => {
                     className="card_item transition duration-500"
                     key={flower.id}
                   >
-                    <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px] lg:h-[300px]">
+                    <div className="relative flex items-center justify-center overflow-hidden bg-[#FBFBFB] sm:max-h-[200px]  sm:rounded-[24px] lg:h-[300px]">
+                      {" "}
                       <img
                         src={flower.online_img}
                         alt="card img"
-                        className="max-h-full max-w-full object-cover"
+                        className="max-h-full max-w-full object-fill sm:min-h-[199px]"
                       />
                       <div className="cardbtn_group absolute bottom-3 left-[-50%] right-[-50%] z-[13] items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                         <button

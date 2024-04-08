@@ -230,7 +230,7 @@ const Header = () => {
       {location.pathname === "/" && (
         <div className="relative hidden sm:block">
           <div className=" sm:container">
-            <nav className="w-full  rounded-t-[30px] bg-[white] px-8 py-6 shadow-head">
+            <nav className="w-full rounded-t-[30px] bg-[white] px-8 py-6 shadow-head">
               <ul className="flex items-center justify-between">
                 <div className="flex items-center justify-center gap-12">
                   <li className="">
@@ -254,8 +254,13 @@ const Header = () => {
                       </svg>
                     </NavLink>
                   </li>
-                  <li className="">
-                    <NavLink to="/cabinat">
+                  {activeLogout ? (
+                    <li
+                      className=""
+                      onClick={() => {
+                        alert("Please log-in");
+                      }}
+                    >
                       <svg
                         width="20"
                         height="18"
@@ -268,8 +273,25 @@ const Header = () => {
                           fill={` ${location.pathname === "/cabinat" ? "#46A358" : "#D9D9D9"}`}
                         />
                       </svg>
-                    </NavLink>
-                  </li>
+                    </li>
+                  ) : (
+                    <li className="">
+                      <NavLink to="/wishlist">
+                        <svg
+                          width="20"
+                          height="18"
+                          viewBox="0 0 20 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18.4134 1.74133C17.3781 0.618439 15.9575 0 14.413 0C13.2585 0 12.2012 0.36499 11.2704 1.08475C10.8008 1.44806 10.3752 1.89255 10 2.41135C9.62494 1.8927 9.19922 1.44806 8.7294 1.08475C7.79877 0.36499 6.74149 0 5.58701 0C4.04251 0 2.62177 0.618439 1.58646 1.74133C0.563507 2.8511 0 4.36722 0 6.01059C0 7.70203 0.630341 9.25034 1.98364 10.8833C3.19427 12.3441 4.93423 13.8269 6.94916 15.544C7.63718 16.1304 8.41705 16.795 9.22684 17.5031C9.44077 17.6904 9.71527 17.7936 10 17.7936C10.2846 17.7936 10.5592 17.6904 10.7729 17.5034C11.5826 16.7952 12.363 16.1302 13.0513 15.5435C15.0659 13.8268 16.8059 12.3441 18.0165 10.8832C19.3698 9.25034 20 7.70203 20 6.01044C20 4.36722 19.4365 2.8511 18.4134 1.74133Z"
+                            fill={` ${location.pathname === "/cabinat" ? "#46A358" : "#D9D9D9"}`}
+                          />
+                        </svg>
+                      </NavLink>
+                    </li>
+                  )}
                 </div>
                 <div className="flex items-center justify-center gap-12">
                   <li className="">
@@ -336,7 +358,7 @@ const Header = () => {
                   )}
                 </div>
               </ul>
-              <div className="absolute left-[44%] right-[44%] top-[-16px] z-[89] flex h-[56px] w-[56px] items-center justify-center rounded-[50%] bg-[#FFF]">
+              <div className="absolute left-[46%] right-[45%] top-[-16px] z-[89] flex h-[56px] w-[56px] items-center justify-center rounded-[50%] bg-[#FFF]">
                 <button className="flex h-12 w-12 items-center justify-center rounded-[50%] bg-gradient-to-b from-[#46A35866] to-[#46A358] shadow-headbtn">
                   <svg
                     width="27.000000"

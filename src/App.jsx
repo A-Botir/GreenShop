@@ -14,6 +14,7 @@ export const UseAllContext = createContext();
 const App = () => {
   const location = useLocation();
   const [hidden, setHidden] = useState(true);
+  const [showSideBar, setshowSideBar] = useState(true);
   const [isVisabilaty, setisVisabilaty] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [flowers, setFlowers] = useState([]);
@@ -163,6 +164,8 @@ const App = () => {
         showPassword,
         setShowPassword,
         activeLogout,
+        showSideBar,
+        setshowSideBar,
       }}
     >
       <div className="relative w-full">
@@ -171,7 +174,7 @@ const App = () => {
           className={`h-[75px] w-full ${location.pathname === "/" ? "sm:h-[60px]" : "sm:hidden"}`}
         ></div>
         <Header />
-        {location.pathname === "/" && <MobHeader />}
+        <MobHeader />
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />

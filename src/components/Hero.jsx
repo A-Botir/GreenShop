@@ -15,12 +15,12 @@ import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 
-import Vase from "../assets/images/photos/main/hero img.png";
+import Vase from "../assets/images/photos/main/heroImg.png";
 
 const Hero = () => {
   return (
-    <section className="bg-[100%] bg-no-repeat sm:w-full sm:rounded-[24px] sm:bg-[url('./assets/images/back/smHero.svg')] ">
-      <div className="sm:bg-bottom-4 sm:bg-right-10 bg-[100%] bg-no-repeat sm:bg-[url('./assets/images/back/smHero.svg')] sm:bg-[25%]">
+    <section className="bg-[100%] bg-no-repeat sm:w-full sm:rounded-[30px] sm:bg-[url('./assets/images/back/smHero.svg')]">
+      <div className="bg-contain bg-[center] bg-no-repeat sm:bg-[url('./assets/images/main/heroImg.png')]">
         <Swiper
           modules={[
             Navigation,
