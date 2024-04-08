@@ -24,8 +24,8 @@ const Сabinet = () => {
   };
 
   return (
-    <section className="mb-56 mt-16 grid grid-cols-11 gap-7">
-      <div className="col-span-3">
+    <section className="mb-56 mt-16 grid grid-cols-11 gap-7 sm:mb-16 sm:mt-6 sm:grid-cols-1 sm:gap-3">
+      <div className="col-span-3 sm:col-span-1">
         <div className="bg-grey">
           <div className="p-[18px]">
             <h2 className="text-[18px] font-bold">My Account</h2>
@@ -290,7 +290,7 @@ const Сabinet = () => {
           </NavLink>
         </div>
       </div>
-      <div className="col-span-8">
+      <div className="col-span-8 sm:col-span-1">
         {step === 1 && <Account />}
         {step === 2 && <Address />}
         {step === 3 && <Wishlist />}

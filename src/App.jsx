@@ -170,9 +170,7 @@ const App = () => {
     >
       <div className="relative w-full">
         <Authorization />
-        <div
-          className={`h-[75px] w-full ${location.pathname === "/" ? "sm:h-[60px]" : "sm:hidden"}`}
-        ></div>
+        <div className={`h-[75px] w-full sm:h-[60px]`}></div>
         <Header />
         <MobHeader />
         <div className="container">

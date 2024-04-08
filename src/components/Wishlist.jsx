@@ -22,11 +22,11 @@ const Wishlist = () => {
       <div className="mb-[60px] grid grid-cols-3 justify-between sm:mb-[50px] sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 lg:mb-[90px] lg:gap-x-8 lg:gap-y-10">
         {mapItem.length === 0 ? (
           <div className="card_item transition duration-500">
-            <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:min-h-[200px] sm:rounded-[24px]  lg:min-h-[300px]">
+            <div className="relative flex items-center justify-center bg-[#FBFBFB] sm:max-h-[200px] sm:rounded-[24px]  lg:min-h-[300px]">
               <img
                 src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1660073901-best-indoor-plants-zz-plant-1660073875.png?crop=1.00xw:0.802xh;0,0.168xh&resize=980:*"
                 alt="card img"
-                className="object-contain"
+                className="max-x-full sm:h-min-[199px] max-h-full object-contain"
               />
               <div className="cardbtn_group absolute right-2 top-2 z-[13] flex-col items-center justify-center gap-2 sm:bottom-auto sm:left-auto sm:right-1 sm:top-2">
                 <button className="card_btn flex h-9 w-9 items-center justify-center rounded-md bg-[white] p-1 sm:h-7 sm:w-7">

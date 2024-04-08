@@ -276,7 +276,7 @@ const Header = () => {
                     </li>
                   ) : (
                     <li className="">
-                      <NavLink to="/wishlist">
+                      <NavLink to="/cabinat">
                         <svg
                           width="20"
                           height="18"

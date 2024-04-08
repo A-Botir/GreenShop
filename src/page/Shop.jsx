@@ -12,7 +12,7 @@ const Shop = () => {
   }
 
   return (
-    <div className="pt-9">
+    <div className="pt-9 sm:pt-6">
       <div className="mb-9 flex items-center sm:hidden">
         <NavLink to="/">
           <p className="text-[15px] font-bold">Home</p>
@@ -23,14 +23,14 @@ const Shop = () => {
       <div className="grid grid-cols-5 gap-6 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-5">
         {searchPlants.map((plant) => (
           <div className="card_item relative" key={plant.id}>
-            <div className="h-[255px]">
+            <div className="sm:msx-h-[200px] h-[255px]">
               <img
                 src={plant.card_img}
                 alt="plant image"
-                className="max-h-full max-w-full object-cover"
+                className="max-h-full max-w-full object-cover sm:min-h-[199px]"
               />
             </div>
-            <div className="mt-5">
+            <div className="mt-5 sm:mt-2">
               <p className="mb-2 text-[15px] font-bold">{plant.common_name}</p>
               <p className="text-[16px] font-bold text-check">
                 ${plant.price}.00
