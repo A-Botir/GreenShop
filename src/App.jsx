@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { createContext, useEffect, useRef, useState } from "react";
 import { Home, Shop, ShopCart, Checkout, Cabinet, SinglePage } from "./page";
 import axios from "axios";
@@ -12,6 +12,7 @@ import Search from "./components/Search";
 export const UseAllContext = createContext();
 
 const App = () => {
+  const location = useLocation();
   const [hidden, setHidden] = useState(true);
   const [isVisabilaty, setisVisabilaty] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +25,10 @@ const App = () => {
   const inputField = useRef(null);
   const [selectedValue, setSelectedValue] = useState("none");
   const [showPassword, setShowPassword] = useState(true);
+  const [activeLogout, setActiveLogout] = useState(
+    !localStorage.getItem("activeLogin") ||
+      localStorage.getItem("activeLogin") === "none",
+  );
 
   const handleInputChange = (event) => {
     const query = event.target.value;
@@ -157,15 +162,17 @@ const App = () => {
         setSelectedValue,
         showPassword,
         setShowPassword,
+        activeLogout,
       }}
     >
       <div className="relative w-full">
         <Authorization />
-        <div className="h-[75px]  w-full sm:hidden"></div>
+        <div
+          className={`h-[75px] w-full ${location.pathname === "/" ? "sm:h-[60px]" : "sm:hidden"}`}
+        ></div>
         <Header />
-        <Search />
+        {location.pathname === "/" && <MobHeader />}
         <div className="container">
-          <MobHeader />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route

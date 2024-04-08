@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer className="py-[6px] sm:py-1">
-      <div className="grid grid-cols-9 gap-10 bg-[#FBFBFB] px-6 pb-6 pt-7 sm:grid-cols-1 sm:gap-4 md:grid-cols-1">
+      <div className="grid grid-cols-9 gap-10 bg-[#FBFBFB] px-6 pb-6 pt-7 sm:grid-cols-1 sm:gap-4 sm:py-3 md:grid-cols-1">
         <div className="col-span-6 grid grid-cols-10 gap-5 sm:col-span-1 md:col-span-1">
           <div className="col-span-3">
             <div className="bg-[url('./assets/images/photos/footer/Ellipse.svg')] bg-left-bottom bg-no-repeat pl-4 sm:pl-2">

@@ -14,7 +14,7 @@ export default {
         center: true,
       },
       transitionTimingFunction: {
-        easy: "ease", 
+        easy: "ease",
       },
     },
     colors: {
@@ -39,6 +39,7 @@ export default {
       footerform: "0px 0px 20px 0px #0000000F",
       head: "0px -10px 30px 0px #B8B8B833",
       headbtn: "0px 10px 20px 0px #D3D3D3",
+      smbtn: " 0px 10px 20px 0px #46A3584D",
     },
     backgroundSize: {
       auto: "auto",
